@@ -1,11 +1,14 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import Header from '../Header';
 
 const Layout = () => {
   return (
     <Container>
       <Row>
-        <Col>Header</Col>
+        <Col>
+          <Header />
+        </Col>
       </Row>
       <Row>
         <Col>Body</Col>
