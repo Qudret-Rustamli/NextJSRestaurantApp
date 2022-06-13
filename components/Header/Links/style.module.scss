@@ -1,8 +1,16 @@
+@import "../../../styles/main";
+
 .container {
-  display: flex;
+  @include flex();
+
   a {
     text-decoration: none;
     margin-right: 10px;
-    color: var($background);
+    color: $red_1;
+    font-family: $Roboto;
+  }
+
+  @include breakpoint($size: medium) {
+    display: none;
   }
 }
