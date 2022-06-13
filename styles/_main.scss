@@ -1,2 +1,4 @@
-@import './colors/scss';
-@import './size.scss';
+@forward "colors";
+@forward "fonts";
+@forward "mixins";
+@forward "breakpoints";
