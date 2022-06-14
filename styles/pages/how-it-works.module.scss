@@ -7,11 +7,8 @@
   margin-bottom: 10rem;
 
   @include breakpoint($size: large) {
-    max-width: 100%;
-  }
-
-  @include breakpoint($size: medium) {
-    margin-bottom: 1rem;
+    max-width: 90%;
+    margin-bottom: 0rem;
   }
 
   &__title {
@@ -40,12 +37,13 @@
     height: 380px;
 
     @include breakpoint($size: large) {
-      height: 280px;
+      height: 330px;
     }
 
     @include breakpoint($size: medium) {
       transform: rotate(0deg);
       margin-top: 4rem;
+      height: 300px;
     }
 
     &__wrapper {
@@ -54,8 +52,12 @@
       left: 50%;
       transform: rotate(-7deg) translateX(-50%) scale(1.1);
 
+      @include breakpoint($size: xlarge) {
+        top: -20%;
+      }
+
       @include breakpoint($size: medium) {
-        top: 0%;
+        top: 5%;
         width: 270px;
         transform: rotate(0deg) translateX(-50%) scale(1.1);
       }
