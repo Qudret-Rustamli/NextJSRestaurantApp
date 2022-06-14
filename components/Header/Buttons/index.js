@@ -9,7 +9,7 @@ const Buttons = () => {
   return (
     <div className={styles.buttons}>
       <Flags />
-      <Button width={100}>Sign up</Button>
+      <Button width={115}>Sign up</Button>
       <Cart />
       <Profile />
     </div>

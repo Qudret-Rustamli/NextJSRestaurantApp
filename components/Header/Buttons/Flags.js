@@ -2,14 +2,20 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { useState } from "react";
 
 export default function Flags() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [flag, setFlag] = useState("en");
+  const [anchorEl, setAnchorEl] = useState(false);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
+  const handleClose = (flag) => {
+    if (flag === "az" || flag === "en" || flag === "fr") {
+      setFlag(flag);
+    }
     setAnchorEl(null);
   };
 
@@ -22,7 +28,7 @@ export default function Flags() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        Dashboard
+        <img src={`/images/flag-${flag}.svg`} />
       </Button>
       <Menu
         id="basic-menu"
@@ -33,9 +39,15 @@ export default function Flags() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose.bind(null, "en")}>
+          <img src="/images/flag-en.svg" alt="english flag" />
+        </MenuItem>
+        <MenuItem onClick={handleClose.bind(null, "az")}>
+          <img src="/images/flag-az.svg" alt="azerbaijan flag" />
+        </MenuItem>
+        <MenuItem onClick={handleClose.bind(null, "fr")}>
+          <img src="/images/flag-fr.svg" alt="french flag" />
+        </MenuItem>
       </Menu>
     </div>
   );

@@ -1,12 +1,26 @@
 @import "../../styles/main";
 
 .container {
-  height: 100px;
+  height: 122px;
   background-color: $gray;
   @include flex();
 }
 
+// ========================
 // Header left
+
 .buttons {
-  @include flex($content: space-between);
+  @include flex($content: space-around);
+}
+
+// Badge - shopping cart
+.badge {
+  background: $red_1;
+  border-radius: 30px;
+  padding: 8px;
+  cursor: pointer;
+
+  svg {
+    color: $white;
+  }
 }
