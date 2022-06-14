@@ -13,7 +13,7 @@ const Links = () => {
       <Link href="/about">
         <a>About us</a>
       </Link>
-      <Link href="/work">
+      <Link href="/works">
         <a>How it works</a>
       </Link>
       <Link href="/faq">

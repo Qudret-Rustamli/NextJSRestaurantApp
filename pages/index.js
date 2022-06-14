@@ -1,10 +1,7 @@
-import Head from 'next/head';
-import Header from '../components/Header';
+import React from 'react';
 
-export default function Home() {
-  return (
-    <div >
-      <Header />
-    </div>
-  );
-}
+const Home = () => {
+  return <div>Home</div>;
+};
+
+export default Home;
