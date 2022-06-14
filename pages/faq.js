@@ -1,9 +1,11 @@
-import React from 'react'
+import FaqAccordion from "../components/Accardion";
 
-const FaqS = () => {
+const Faq = () => {
   return (
-    <div>FaqS</div>
-  )
-}
+    <>
+      <p>aaaaaaaaa</p>
+    </>
+  );
+};
 
-export default FaqS
+export default Faq;
