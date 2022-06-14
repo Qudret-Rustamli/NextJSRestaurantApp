@@ -1,0 +1,35 @@
+@import '../../../styles/main.scss';
+.container {
+  margin-left: -10px;
+  background-color: $gray;
+  height: 60vh;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 80% !important;
+  margin: 0 auto;
+}
+
+.SidebarItemContainer {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  height: 3rem;
+  width: 80%;
+  margin: 1rem 2rem;
+
+  &:hover {
+    background-color: $backgroundd;
+    border-radius: 10px;
+    padding-left: 10px;
+    color: $gray;
+  }
+
+  .SidebarItemIcon {
+    margin-right: 0.5rem;
+  }
+  .SidebarItemText {
+    font-weight: 500;
+  }
+}
