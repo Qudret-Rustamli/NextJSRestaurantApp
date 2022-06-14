@@ -1,0 +1,43 @@
+@import '../../styles/main.scss';
+.parentRow {
+  position: relative;
+  box-sizing: border-box;
+
+  .panel {
+    display: flex;
+    justify-content: space-around;
+    background-color: $orange;
+    height: 85vh;
+    transform: rotate(20deg);
+    border-radius: 70px;
+    position: relative;
+    box-sizing: border-box;
+
+    .top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: -10px;
+      left: 0;
+    }
+    .center {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 220px;
+      left: -150px;
+      margin: 45px 0;
+
+    }
+    .bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: -70px;
+      left: -50px;
+    }
+  }
+}

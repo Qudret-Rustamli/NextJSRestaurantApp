@@ -1,6 +1,6 @@
-import React from 'react';
-import style from './style.module.scss';
-import Link from 'next/link';
+import React from "react";
+import style from "./style.module.scss";
+import Link from "next/link";
 const Links = () => {
   return (
     <div className={style.container}>
@@ -13,7 +13,7 @@ const Links = () => {
       <Link href="/about">
         <a>About us</a>
       </Link>
-      <Link href="/work">
+      <Link href="/how-it-works">
         <a>How it works</a>
       </Link>
       <Link href="/faq">

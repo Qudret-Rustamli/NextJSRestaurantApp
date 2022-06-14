@@ -2,14 +2,19 @@
 
 .container {
   padding: 0 10px;
-  margin-top: 90px;
+  margin-top: 70px;
 
   &__title {
     @include section_title;
   }
 
   &__accordion {
-    max-width: 80%;
+    max-width: 70%;
     margin: 0 auto;
+
+    @include breakpoint($size: small) {
+      max-width: 95%;
+      margin-top: 40px;
+    }
   }
 }

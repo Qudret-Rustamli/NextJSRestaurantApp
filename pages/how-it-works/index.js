@@ -21,8 +21,8 @@ const Hiw = () => {
             <Image
               src="/images/how-it-works.svg"
               alt="Picture of the author"
-              width={700}
-              height={700}
+              width={600}
+              height={600}
             />
           </div>
         </div>

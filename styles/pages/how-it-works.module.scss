@@ -2,11 +2,16 @@
 
 .container {
   padding: 0 10px;
-  max-width: 80%;
-  margin: 90px auto 0px;
+  max-width: 70%;
+  margin: 70px auto 0px;
+  margin-bottom: 10rem;
 
   @include breakpoint($size: large) {
     max-width: 100%;
+  }
+
+  @include breakpoint($size: medium) {
+    margin-bottom: 1rem;
   }
 
   &__title {
@@ -40,6 +45,7 @@
 
     @include breakpoint($size: medium) {
       transform: rotate(0deg);
+      margin-top: 4rem;
     }
 
     &__wrapper {
