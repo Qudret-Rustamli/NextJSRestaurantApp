@@ -1,13 +1,13 @@
-import React from 'react';
-import Links from './Links';
-import Logo from './Logo';
-import styles from './Header.module.scss';
-import Buttons from './Buttons';
-import { Container, Row, Col } from 'reactstrap';
+import React from "react";
+import Links from "./Links";
+import Logo from "./Logo";
+import styles from "./Header.module.scss";
+import Buttons from "./Buttons";
+import { Container, Row, Col } from "reactstrap";
 
 const Header = () => {
   return (
-    <Container >
+    <Container fluid>
       <Row className={styles.container}>
         <Col md={2}>
           <Logo />

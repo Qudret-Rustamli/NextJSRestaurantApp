@@ -1,8 +1,13 @@
 @import "../main";
 
 .container {
+  height: calc(100vh - 100px);
   padding: 0 10px;
   margin-top: 70px;
+
+  @include breakpoint($size: small) {
+    height: auto;
+  }
 
   &__title {
     @include section_title;

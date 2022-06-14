@@ -1,4 +1,4 @@
-@import '../../../styles/main';
+@import "../../../styles/main";
 
 .container {
   transform: rotate(-20deg);
@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
+
   .imgContainer {
     width: 120px;
     height: 120px;

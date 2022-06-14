@@ -1,9 +1,12 @@
 @import "../../styles/main";
 
 .container {
-  @include flex();
+  height: 100px;
   background-color: $gray;
-  padding: 30px 0;
-  display: flex;
-  justify-content: space-between;
+  @include flex();
+}
+
+// Header left
+.buttons {
+  @include flex($content: space-between);
 }
