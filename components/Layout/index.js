@@ -1,8 +1,8 @@
-import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import Header from '../Header';
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import Header from "../Header";
 
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <Container>
       <Row>
@@ -11,7 +11,7 @@ const Layout = () => {
         </Col>
       </Row>
       <Row>
-        <Col>Body</Col>
+        <Col>{children}</Col>
       </Row>
       <Row>
         <Col>Footer</Col>

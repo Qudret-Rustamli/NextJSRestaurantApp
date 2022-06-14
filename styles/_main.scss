@@ -1,4 +1,4 @@
-@forward "colors";
-@forward "fonts";
-@forward "mixins";
-@forward "breakpoints";
+@forward "./utils/colors";
+@forward "./utils/breakpoints";
+@forward "./utils/mixins";
+@forward "./utils/fonts";
