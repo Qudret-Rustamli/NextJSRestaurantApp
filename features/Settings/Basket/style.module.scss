@@ -1,0 +1,35 @@
+@import '../../../styles/main.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $gray;
+  box-sizing: border-box;
+  margin-right: 20px;
+  hr {
+    width: 90%;
+    margin: 1rem auto;
+  }
+  &__title {
+    padding: 30px 0 30px 40px;
+  }
+  &__count {
+    display: flex;
+    color: $backgroundd;
+    margin-left: 4rem;
+    &__icon {
+      color: $backgroundd;
+      margin-right: 1rem;
+    }
+    &__number {
+      color: $backgroundd;
+      font-weight: bold;
+    }
+  }
+  &__contents {
+    display: flex;
+    flex-direction: column;
+    margin-left: 4rem;
+  }
+}
