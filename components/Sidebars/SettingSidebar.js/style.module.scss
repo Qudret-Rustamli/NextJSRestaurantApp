@@ -1,14 +1,19 @@
-@import '../../../styles/main.scss';
+@import "../../../styles/main.scss";
+
 .container {
-  margin-left: -10px;
   background-color: $gray;
   height: 60vh;
-  border-radius: 20px;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 80% !important;
-  margin: 0 auto;
+  width: 90%;
+  border-radius: 5px;
+  & > :first-child {
+    margin-top: 1.2rem;
+  }
+  // border-radius: 20px;
+  // width: 80% !important;
+  // margin: 0 auto;
+  // margin-left: -10px;
 }
 
 .SidebarItemContainer {
@@ -17,13 +22,18 @@
   cursor: pointer;
   height: 3rem;
   width: 80%;
-  margin: 1rem 2rem;
+  padding: 0 0.5rem;
+  font-family: $Mukta;
+  font-weight: 600;
+  font-size: $large;
+  letter-spacing: 0.03em;
+  color: $gray_3;
+  margin: 0 2rem 1rem;
 
   &:hover {
-    background-color: $backgroundd;
-    border-radius: 10px;
-    padding-left: 10px;
-    color: $gray;
+    background: $red_2;
+    border-radius: 4px;
+    color: $red_1;
   }
 
   .SidebarItemIcon {

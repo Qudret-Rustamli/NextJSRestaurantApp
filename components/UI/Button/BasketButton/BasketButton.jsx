@@ -1,18 +1,26 @@
-import { IconButton } from '@mui/material';
-import React from 'react';
-import style from './style.module.scss';
+import React from "react";
+import style from "./style.module.scss";
+import { Button } from "@mui/material";
 
 const BasketButton = () => {
   return (
-    <div className={style.container}>
+    <Button
+      className={style.container}
+      variant="raised"
+      sx={{
+        "&.MuiButtonBase-root:hover": {
+          bgcolor: "white",
+        },
+      }}
+    >
       <div className={style.container__iconPlus}>
-        <IconButton>+</IconButton>
+        <div>+</div>
       </div>
       <div className={style.container__count}>9</div>
       <div className={style.container__iconMinus}>
-        <IconButton>-</IconButton>
+        <div>-</div>
       </div>
-    </div>
+    </Button>
   );
 };
 

@@ -1,21 +1,58 @@
+@import "../../../styles/main";
+
 .container {
   display: flex;
-  &__image {
-    width: 120px;
-    height: 120px;
-    img {
-      width: 100%;
-      height: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  &__delete {
+    position: absolute;
+    top: -10px;
+    right: -3px;
+
+    svg {
+      color: $gray_4;
     }
   }
-  &__content {
+
+  &__left {
     display: flex;
-    flex-direction: column;
-    &__title {
+    align-items: center;
+
+    &__image {
+      width: 100px;
+      height: 100px;
+      margin-right: 1rem;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
-    &__price {
+
+    &__content {
+      display: flex;
+      flex-direction: column;
+
+      &__title {
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        line-height: 45px;
+        color: $gray_2;
+        font-size: $extraLarge;
+      }
+
+      &__price {
+        font-weight: 500;
+        letter-spacing: 0.03em;
+        color: $gray_2;
+        font-size: $medium;
+      }
     }
   }
-  &__actions {
+
+  &__right {
+    margin-right: 3rem;
   }
 }

@@ -1,14 +1,18 @@
-import { Button } from '@mui/material';
-import { Formik, Form } from 'formik';
-import style from './formContainer.module.scss';
-import SendIcon from '@mui/icons-material/Send';
+import { Button } from "@mui/material";
+import { Formik, Form } from "formik";
+import style from "./formContainer.module.scss";
+import SendIcon from "@mui/icons-material/Send";
 
 const FormContainer = ({ initialValues, validationSchema, children }) => {
   const onSubmit = (values) => {
-    console.log(100, values);
+    console.log("Values =>", values);
   };
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
       {(formik) => (
         <Form className={style.formContainer}>
           {children}
@@ -18,7 +22,8 @@ const FormContainer = ({ initialValues, validationSchema, children }) => {
             endIcon={<SendIcon />}
             color="success"
             className={style.btn}
-            disabled={!formik.isValid || formik.isSubmitting}>
+            disabled={!formik.isValid || formik.isSubmitting}
+          >
             SEND
           </Button>
         </Form>

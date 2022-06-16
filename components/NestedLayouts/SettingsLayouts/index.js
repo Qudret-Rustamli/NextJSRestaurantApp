@@ -1,6 +1,6 @@
-import React from 'react';
-import { Container, Col, Row } from 'reactstrap';
-import SettingsSidebar from '../../Sidebars/SettingSidebar.js';
+import React from "react";
+import { Container, Col, Row } from "reactstrap";
+import SettingsSidebar from "../../Sidebars/SettingSidebar.js";
 
 const NestedLayout = ({ children }) => {
   return (
