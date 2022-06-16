@@ -1,12 +1,27 @@
 import * as React from "react";
+import IconButton from "@mui/material/IconButton";
 import Badge from "@mui/material/Badge";
-import MailIcon from "@mui/icons-material/Mail";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import styles from "../Header.module.scss";
+import { styled } from "@material-ui/core";
 
-export default function SimpleBadge() {
+const StyledBadge = styled(Badge)({
+  "& .MuiBadge-badge": {
+    backgroundColor: "#f05159",
+    color: "#fff",
+    right: -2,
+    top: 2,
+  },
+});
+
+const Cart = () => {
   return (
-    <Badge badgeContent={4} color="primary">
-      <ShoppingCartIcon color="action" />
-    </Badge>
+    <IconButton aria-label="cart">
+      <StyledBadge badgeContent={4} className={styles.badge}>
+        <ShoppingCartIcon />
+      </StyledBadge>
+    </IconButton>
   );
-}
+};
+
+export default Cart;

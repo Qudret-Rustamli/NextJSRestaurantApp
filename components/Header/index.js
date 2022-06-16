@@ -12,10 +12,10 @@ const Header = () => {
         <Col md={2}>
           <Logo />
         </Col>
-        <Col md={6}>
+        <Col md={7}>
           <Links />
         </Col>
-        <Col md={4}>
+        <Col md={3}>
           <Buttons />
         </Col>
       </Row>

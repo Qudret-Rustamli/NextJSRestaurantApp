@@ -1,5 +1,17 @@
 @import "../../../styles/main";
 
+@keyframes animateScale {
+  0% {
+    transform: scale(1) rotate(-20deg);
+  }
+  50% {
+    transform: scale(1.07) rotate(-20deg);
+  }
+  100% {
+    transform: scale(1) rotate(-20deg);
+  }
+}
+
 .container {
   transform: rotate(-20deg);
   width: 274px;
@@ -10,8 +22,10 @@
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
+  transition: all 0.7s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  .imgContainer {
+  &__img {
     width: 120px;
     height: 120px;
     position: absolute;
@@ -22,31 +36,35 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     img {
       width: 90%;
       height: 90%;
       border-radius: 50%;
     }
   }
-  .infoContainer {
+
+  &__info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     margin-left: 1rem;
-    .title {
+
+    &__title {
       font-size: 18px;
       font-weight: bold;
       color: $gray_2;
       margin-bottom: 5px;
     }
-    .rating {
+
+    &__rating {
       font-size: 14px;
-      color: #000;
+      color: $black;
       margin-bottom: 5px;
     }
 
-    .price {
+    &__price {
       font-size: $large;
       color: $gray_2;
       margin-bottom: 5px;
@@ -54,8 +72,8 @@
     }
   }
 }
+
 .container:hover {
   cursor: pointer;
-  transition: all 0.7s ease-in-out;
-  transform: scale(1.1);
+  animation: animateScale infinite 1.8s;
 }

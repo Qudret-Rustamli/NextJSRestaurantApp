@@ -6,7 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import styles from "./Accardion.module.scss";
 
-const FaqAccordion = () => {
+export const FaqAccordion = () => {
   return (
     <>
       <Accordion className={styles.accardion}>
@@ -64,4 +64,3 @@ const FaqAccordion = () => {
   );
 };
 
-export default FaqAccordion;
