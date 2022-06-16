@@ -60,7 +60,23 @@ export const FaqAccordion = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel4a-content"
+          id="panel4a-header"
+        >
+          <Typography className={styles.accardion__title}>
+            Accordion 4
+          </Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography className={styles.accardion__desc}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
     </>
   );
 };
-

@@ -17,7 +17,7 @@ const StyledBadge = styled(Badge)({
 const Cart = () => {
   return (
     <IconButton aria-label="cart">
-      <StyledBadge badgeContent={4} className={styles.badge}>
+      <StyledBadge badgeContent={4} color="primary" className={styles.badge}>
         <ShoppingCartIcon />
       </StyledBadge>
     </IconButton>

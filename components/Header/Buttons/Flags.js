@@ -35,6 +35,7 @@ export default function Flags() {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
+        disableScrollLock={true}
         MenuListProps={{
           "aria-labelledby": "basic-button",
         }}
