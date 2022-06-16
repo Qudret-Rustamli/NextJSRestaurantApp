@@ -1,8 +1,9 @@
 import Layout from '../../components/Layout';
 import NestedLayout from '../../components/NestedLayouts/SettingsLayouts';
+import BasketPage from '../../features/Settings/Basket/BasketPage';
 
 export default function Basket() {
-  return <div>Basket</div>;
+  return <BasketPage />;
 }
 
 Basket.getLayout = () => {

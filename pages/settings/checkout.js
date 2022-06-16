@@ -3,7 +3,6 @@ import NestedLayout from '../../components/NestedLayouts/SettingsLayouts';
 
 import style from '../../styles/pages/profile/checkout.module.scss';
 
-
 export default function Checkout() {
   return <div className={style.container}>Checkout</div>;
 }
@@ -11,7 +10,7 @@ export default function Checkout() {
 Checkout.getLayout = () => {
   return (
     <Layout>
-      <NestedLayout>{<Checkout/>}</NestedLayout>
+      <NestedLayout>{<Checkout />}</NestedLayout>
     </Layout>
   );
 };
