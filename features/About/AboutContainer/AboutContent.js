@@ -1,9 +1,9 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import AboutPonel from "./Panel/AboutPonel";
+import AboutPonel from "../Panel/AboutPonel";
 import style from "./About.module.scss";
 
-const AboutContent = () => {
+export const AboutContent = () => {
   return (
     <Container>
       <Row className={style.cont}>
@@ -27,5 +27,3 @@ const AboutContent = () => {
     </Container>
   );
 };
-
-export default AboutContent;
