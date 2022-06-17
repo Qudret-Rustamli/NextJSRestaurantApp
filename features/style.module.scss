@@ -1,5 +1,17 @@
 @import '../styles//main.scss';
 
+@keyframes animateScale {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.07) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
 .container {
   margin-top: 1rem;
   display: flex;
@@ -191,11 +203,14 @@
       justify-content: space-evenly;
       margin: 5rem auto;
       font-size: 5rem;
+      cursor: pointer;
+      animation: animateScale infinite 1.8s;
       :hover {
         color: $gray_4;
       }
     }
     &__title {
+      animation: animateScale infinite 1.8s;
       display: flex;
       align-items: center;
       justify-content: center;
