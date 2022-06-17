@@ -2,7 +2,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import FormContainer from '../../components/Form/FormContainer';
 import FormControl from '../../components/Form/FormControl';
-
+import style from './style.module.scss';
 const LoginForm = () => {
   const initialValues = {
     username: '',
@@ -14,8 +14,8 @@ const LoginForm = () => {
     password: Yup.string().required('Required'),
   });
   return (
-    <div>
-      <FormContainer initialValues={initialValues} validationSchema={validationSchema}>
+    <FormContainer initialValues={initialValues} validationSchema={validationSchema}>
+     <div className={style.form_control}>
         <FormControl
           control="input"
           type="text"
@@ -23,6 +23,8 @@ const LoginForm = () => {
           name="username"
           variant="outlined"
         />
+      </div>
+      <div className={style.form_control}>
         <FormControl
           control="input"
           type="password"
@@ -30,8 +32,8 @@ const LoginForm = () => {
           name="password"
           variant="outlined"
         />
-      </FormContainer>
-    </div>
+      </div>
+    </FormContainer>
   );
 };
 

@@ -28,42 +28,54 @@ const ProfileForm = () => {
     <>
       <h2 className={style.title}>Profile</h2>
       <FormContainer initialValues={initialValues} validationSchema={validationSchema}>
-        <FormControl
-          control="input"
-          type="text"
-          label="First Name"
-          name="firstName"
-          variant="outlined"
-        />
-        <FormControl
-          control="input"
-          type="text"
-          label="Last Name"
-          name="lastName"
-          variant="outlined"
-        />
-        <FormControl
-          control="input"
-          type="email"
-          label="Email address"
-          name="email"
-          variant="outlined"
-        />
-        <FormControl
-          control="input"
-          type="phone"
-          label="Phone Number"
-          name="phone"
-          variant="outlined"
-        />
-        <FormControl control="input" type="text" label="City" name="city" variant="outlined" />
-        <FormControl
-          control="input"
-          type="text"
-          label="Address"
-          name="address"
-          variant="outlined"
-        />
+        <div className={style.form_control}>
+          <FormControl
+            control="input"
+            type="text"
+            label="First Name"
+            name="firstName"
+            variant="outlined"
+          />
+        </div>
+        <div className={style.form_control}>
+          <FormControl
+            control="input"
+            type="text"
+            label="Last Name"
+            name="lastName"
+            variant="outlined"
+          />
+        </div>
+        <div className={style.form_control}>
+          <FormControl
+            control="input"
+            type="email"
+            label="Email address"
+            name="email"
+            variant="outlined"
+          />
+        </div>
+        <div className={style.form_control}>
+          <FormControl
+            control="input"
+            type="phone"
+            label="Phone Number"
+            name="phone"
+            variant="outlined"
+          />
+        </div>
+        <div className={style.form_control}>
+          <FormControl control="input" type="text" label="City" name="city" variant="outlined" />
+        </div>
+        <div className={style.form_control}>
+          <FormControl
+            control="input"
+            type="text"
+            label="Address"
+            name="address"
+            variant="outlined"
+          />
+        </div>
       </FormContainer>
     </>
   );

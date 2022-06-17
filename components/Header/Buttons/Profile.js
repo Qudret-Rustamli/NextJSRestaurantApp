@@ -84,20 +84,22 @@ export default function AccountMenu() {
         </Link>
         <Link href="/settings/order">
           <MenuItem>
-              <FilterFramesIcon fontSize="small" />
+            <FilterFramesIcon fontSize="small" />
             Your Orders
           </MenuItem>
         </Link>
-       <Link href="/settings/checkout">
-       <MenuItem>
+        <Link href="/settings/checkout">
+          <MenuItem>
             <PointOfSaleIcon fontSize="small" />
-          Checkout
-        </MenuItem>
-       </Link>
-        <MenuItem>
+            Checkout
+          </MenuItem>
+        </Link>
+        <Link href="/login">
+          <MenuItem>
             <Logout fontSize="small" />
-          Logout
-        </MenuItem>
+            Logout
+          </MenuItem>
+        </Link>
       </Menu>
     </React.Fragment>
   );

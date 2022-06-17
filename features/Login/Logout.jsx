@@ -2,7 +2,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import FormContainer from '../../components/Form/FormContainer';
 import FormControl from '../../components/Form/FormControl';
-
+import style from './style.module.scss';
 const LogoutForm = () => {
   const initialValues = {
     fullName: '',
@@ -18,8 +18,8 @@ const LogoutForm = () => {
     password: Yup.string().required('Required'),
   });
   return (
-    <div>
-      <FormContainer initialValues={initialValues} validationSchema={validationSchema}>
+    <FormContainer initialValues={initialValues} validationSchema={validationSchema}>
+      <div className={style.form_control}>
         <FormControl
           control="input"
           type="text"
@@ -27,6 +27,8 @@ const LogoutForm = () => {
           name="fullName"
           variant="outlined"
         />
+      </div>
+      <div className={style.form_control}>
         <FormControl
           control="input"
           type="text"
@@ -34,7 +36,16 @@ const LogoutForm = () => {
           name="username"
           variant="outlined"
         />
+      </div>
+      <div className={style.form_control}>
         <FormControl control="input" type="email" label="Email" name="email" variant="outlined" />
+      </div>
+      <div className={style.form_control}>
+        <FormControl control="input" type="email" label="Email" name="email" variant="outlined" />
+      </div>
+
+      <div className={style.form_control}>
+        {' '}
         <FormControl
           control="input"
           type="text"
@@ -42,8 +53,8 @@ const LogoutForm = () => {
           name="password"
           variant="outlined"
         />
-      </FormContainer>
-    </div>
+      </div>
+    </FormContainer>
   );
 };
 
