@@ -1,0 +1,62 @@
+.container {
+  &__mainContent {
+    &__subLeft {
+      &__title {
+      }
+      &__content {
+      }
+      &__btns {
+      }
+    }
+    &__subRight {
+    }
+  }
+  &__featureContent {
+    &__title {
+    }
+    &__content {
+    }
+    &__cards {
+    }
+  }
+  &__Content__first {
+    &__left {
+      &__title {
+      }
+      &__content {
+      }
+    }
+    &__right {
+    }
+  }
+  &__Content__second {
+    &__left {
+    }
+    &__right {
+      &__title {
+      }
+      &__content {
+      }
+    }
+  }
+  &__Content__third {
+    &__left {
+      &__title {
+      }
+      &__content {
+      }
+    }
+    &__right {
+    }
+  }
+  &__newFoods {
+    &__up {
+      &__title {
+      }
+      &__content {
+      }
+    }
+    &__down {
+    }
+  }
+}
