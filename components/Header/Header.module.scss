@@ -8,6 +8,15 @@
   @include flex();
 }
 
+.containerS {
+  height: 80px;
+  background-color: $backgroundd;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+}
+
 // ========================
 // Header left
 

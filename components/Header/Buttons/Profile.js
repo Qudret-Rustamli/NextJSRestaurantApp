@@ -10,19 +10,20 @@ import FilterFramesIcon from "@mui/icons-material/FilterFrames";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
 import Logout from "@mui/icons-material/Logout";
 import Tooltip from "@mui/material/Tooltip";
-
-//next/Link
 import Link from "next/link";
 
 export default function AccountMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   return (
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
@@ -97,10 +98,12 @@ export default function AccountMenu() {
             Checkout
           </MenuItem>
         </Link>
-        <MenuItem>
-          <Logout fontSize="small" />
-          Logout
-        </MenuItem>
+        <Link href="/login">
+          <MenuItem>
+            <Logout fontSize="small" />
+            Logout
+          </MenuItem>
+        </Link>
       </Menu>
     </React.Fragment>
   );

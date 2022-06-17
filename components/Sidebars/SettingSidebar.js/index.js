@@ -16,7 +16,7 @@ const SettingsSidebar = () => {
       <ItemSidebar icon={<ShoppingBasketIcon />} title="Your Basket" link="/settings/basket" />
       <ItemSidebar icon={<FilterFramesIcon />} title="Your Orders" link="/settings/order" />
       <ItemSidebar icon={<PointOfSaleIcon />} title="Checkout" link="/settings/checkout" />
-      <ItemSidebar icon={<Logout />} title="Logout" link="/" />
+      <ItemSidebar icon={<Logout />} title="Logout" link="/login" />
     </div>
   );
 };
