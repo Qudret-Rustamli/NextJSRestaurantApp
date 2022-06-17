@@ -1,0 +1,85 @@
+@import '../../../styles/main.scss';
+
+.bigPanelContainer {
+  width: 90%;
+  height: 80%;
+  background-color: black;
+  border-radius: 5rem;
+  margin: 3rem auto;
+  position: relative;
+
+  &__bigPanelImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 5rem;
+    position: absolute;
+    left: -6rem;
+    top: 0px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 5rem;
+    }
+  }
+
+  &__cards {
+    position: relative;
+    position: absolute;
+    &__card1 {
+      position: absolute;
+      top: 2rem;
+      left: -2rem;
+    }
+    &__card2 {
+      position: absolute;
+      top: 23rem;
+      left: -5rem;
+    }
+    &__card3 {
+      position: absolute;
+      top: 13rem;
+      left: 25.2rem;
+    }
+  }
+}
+
+//=====================================================================
+@keyframes animateScale {
+  0% {
+    transform: scale(1) rotate(-30deg);
+  }
+  50% {
+    transform: scale(1.07) rotate(0deg);
+  }
+  100% {
+    transform: scale(1) rotate(-30deg);
+  }
+}
+.smallPanelContainer {
+  margin: auto;
+  width: 40%;
+  height: 45vh;
+  background-color: $backgroundd;
+  border-radius: 2.5rem;
+  transform: rotate(30deg);
+  position: relative;
+
+  &__panelImg {
+    width: 135%;
+    height: 135%;
+    transform: rotate(-30deg);
+    position: absolute;
+    left: -5rem;
+    top: -5rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+.smallPanelContainer:hover {
+  cursor: pointer;
+  animation: animateScale infinite 1.8s;
+}
