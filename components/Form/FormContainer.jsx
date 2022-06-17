@@ -21,7 +21,7 @@ const FormContainer = ({ initialValues, validationSchema, children }) => {
             variant="contained"
             endIcon={<SendIcon />}
             color="success"
-            className={style.btn}
+            className={style.formContainer__btn}
             disabled={!formik.isValid || formik.isSubmitting}
           >
             SEND
