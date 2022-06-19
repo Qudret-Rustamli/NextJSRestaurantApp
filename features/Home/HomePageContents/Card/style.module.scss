@@ -1,5 +1,4 @@
-@import '../../../styles/main.scss';
-
+@import "../../../../styles/main.scss";
 
 //scale keyframe
 @keyframes animateScale {
@@ -17,9 +16,10 @@
 .SmallContainer {
   display: flex;
   justify-content: space-around;
+  padding: 0 1.5rem;
   align-items: center;
   background-color: white;
-  width: 17rem;
+  width: 15rem;
   height: 5rem;
   border-radius: 0.2rem;
   animation: animateScale 5s infinite;
@@ -41,20 +41,25 @@
 }
 
 @keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
+  from {
+    left: 0px;
+  }
+  to {
+    left: 200px;
+  }
 }
 
 .bigCardContainer {
   padding: 1rem;
-  max-width: 80% ;
+  max-width: 80%;
   height: 55vh;
   background-color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   &__panelImg {
     width: 20rem;
     height: 15rem;
@@ -73,10 +78,9 @@
     color: $gray_4;
     text-align: center;
   }
-
 }
 
-.bigCardContainer:hover{
+.bigCardContainer:hover {
   cursor: pointer;
   transform: scale(0.9);
   transition: all 0.9s ease-in-out;
