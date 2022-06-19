@@ -1,7 +1,12 @@
 import React from 'react';
+import HomeFeature from '../features/Home';
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <HomeFeature />
+    </div>
+  );
 };
 
 export default Home;

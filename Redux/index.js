@@ -1,7 +1,8 @@
-import React from 'react';
+import { configureStore } from '@reduxjs/toolkit';
+import basketReducer from './Slicers/BasketSlice';
 
-const index = () => {
-  return <div>index</div>;
-};
-
-export default index;
+export const store = configureStore({
+  reducer: {
+    basket: basketReducer,
+  },
+});
