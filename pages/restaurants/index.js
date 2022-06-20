@@ -3,7 +3,6 @@ import Head from "next/head";
 import { restaurants } from "../../features/Restaurants/mock";
 
 const HowItWork = ({ restaurants }) => {
-  console.log("mock", restaurants);
   return (
     <>
       <Head>

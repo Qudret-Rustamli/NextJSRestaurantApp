@@ -1,10 +1,12 @@
-import React from "react";
-import style from "./style.module.scss";
-import Link from "next/link";
+import React, { useState } from 'react';
+import style from './style.module.scss';
+import Link from 'next/link';
 const Links = () => {
+  const [links, setLinks] = useState();
+
   return (
     <div className={style.container}>
-      <Link href="/">
+      <Link href="/" onClick={() => setLinks('')}>
         <a>Home</a>
       </Link>
       <Link href="/restaurants">
