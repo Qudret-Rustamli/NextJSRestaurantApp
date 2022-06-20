@@ -4,10 +4,7 @@ import RestaurantProductCard from "../../components/Cards/RestaurantProductCard"
 import RestaurantBasketCard from "../../components/Cards/RestaurantBasketCard";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 
-import { useRouter } from "next/router";
 export const RestaurantContainer = () => {
-  const { query } = useRouter();
-
   return (
     <>
       {/* Restaurant info */}
