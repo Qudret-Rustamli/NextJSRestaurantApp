@@ -5,7 +5,7 @@ const HowItWork = () => {
   return (
     <>
       <Head>
-        <title> How It Works | Foody Delivery</title>
+        <title> Restaurants | Foody Delivery</title>
       </Head>
       <RestaurantContainer />
     </>
