@@ -7,7 +7,7 @@ import { Container, Row, Col } from "reactstrap";
 
 const Header = () => {
   return (
-    <Container fluid>
+    <Container fluid style={{ padding: 0 }}>
       <Row className={styles.container}>
         <Col md={2}>
           <Logo />

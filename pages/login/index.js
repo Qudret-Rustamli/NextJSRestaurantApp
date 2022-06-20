@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import React from 'react';
-import SecondLayout from '../components/Layout/SecondLayout';
-import LoginLayout from '../components/NestedLayouts/LoginLayouts/LoginLayout';
-import LoginFeature from '../features/Login';
+import SecondLayout from '../../components/Layout/SecondLayout';
+import LoginLayout from '../../components/NestedLayouts/LoginLayouts/LoginLayout';
+import LoginFeature from '../../features/Login';
 
 const Login = () => {
   return (

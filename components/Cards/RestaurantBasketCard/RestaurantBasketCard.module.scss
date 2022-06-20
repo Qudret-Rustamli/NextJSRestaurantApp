@@ -1,0 +1,56 @@
+@import "../../../styles/main";
+
+.card {
+  @include flex($content: space-between);
+  position: relative;
+  height: 5.5rem;
+  border-bottom: 1px solid #e0e0e0;
+
+  &__delete {
+    position: absolute;
+    top: 2px;
+    right: 0;
+    cursor: pointer;
+    svg {
+      color: $gray_4;
+    }
+  }
+
+  &__desc {
+    @include flex();
+
+    img {
+      width: 45px;
+      margin-right: 1rem;
+    }
+    :first-child {
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: #4f4f4f;
+      line-height: 30px;
+      margin-bottom: 0;
+    }
+
+    :nth-child(2) {
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: #4f4f4f;
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+  }
+
+  &__count {
+    cursor: pointer;
+    background-color: #ffff;
+    border-radius: 50px;
+    width: 29px;
+    height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    margin-right: 2.2rem;
+  }
+}

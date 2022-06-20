@@ -1,0 +1,63 @@
+@import "../../../styles/main";
+
+.card {
+  @include flex($content: space-between);
+  padding: 0 30px 30px;
+
+  &__left {
+    @include flex();
+    width: 75%;
+
+    &__img {
+      border-radius: 99px;
+      width: 100px;
+      height: 100px;
+    }
+
+    &__desc {
+      margin-left: 30px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      & > :first-child {
+        color: $gray_2;
+        font-weight: 500;
+        font-size: $medium;
+        letter-spacing: 0.03em;
+        margin-bottom: 0;
+      }
+
+      & > :nth-child(2) {
+        font-weight: 500;
+        font-size: $extraSmall;
+        letter-spacing: 0.03em;
+        color: $gray_2;
+        padding-top: 15px;
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__right {
+    @include flex($content: flex-end);
+    width: 24%;
+    margin-bottom: 0;
+
+    &__btn {
+      font-size: $large;
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      border: 2px solid #bdbdbd;
+      outline: none;
+      cursor: pointer;
+      margin-left: 1rem;
+
+      &:hover {
+        background-color: #6fcf97;
+        transition: 0.3s ease-in-out;
+        color: #fff;
+      }
+    }
+  }
+}
