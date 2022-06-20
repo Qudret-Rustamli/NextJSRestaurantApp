@@ -2,6 +2,8 @@ import Button from '../components/Button';
 import BigCard from '../components/HomePageContents/Card/BigCard';
 import BigPanel from '../components/HomePageContents/Panel/BigPanel';
 import SmallPanel from '../components/HomePageContents/Panel/SmallPanel';
+
+//style
 import style from './style.module.scss';
 
 //icons
@@ -13,7 +15,7 @@ import {
   FaLinkedin,
   FaTiktok,
 } from 'react-icons/fa';
-import {MdOutgoingMail,MdLocationPin} from 'react-icons/md';
+import { MdOutgoingMail, MdLocationPin } from 'react-icons/md';
 
 const HomeFeature = () => {
   return (
@@ -132,8 +134,8 @@ const HomeFeature = () => {
           <FaYoutube />
           <FaLinkedin />
           <FaTiktok />
-          <MdOutgoingMail/>
-          <MdLocationPin/>
+          <MdOutgoingMail />
+          <MdLocationPin />
         </div>
       </div>
     </div>
