@@ -1,11 +1,20 @@
+@import "../../../styles/main";
+
 .cont {
-  font-family: 'Mukta';
+  font-family: "Mukta";
   font-style: normal;
   font-weight: 800;
   font-size: 28px;
   line-height: 24px;
   letter-spacing: 0.03em;
   color: #000;
+  cursor: pointer;
+  margin-left: 1.5rem;
+  width: 10rem;
+
+  @include breakpoint($size: $small) {
+    margin-left: 0;
+  }
 
   span:nth-child(2) {
     color: red;

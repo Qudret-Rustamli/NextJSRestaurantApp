@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import Button from "../../Button";
+import Flags from "./Flags";
+import Cart from "./Cart";
+import Profile from "./Profile";
+import styles from "../Header.module.scss";
 
-const index = () => {
+const Buttons = () => {
   return (
-    <div>index</div>
-  )
-}
+    <div className={styles.buttons}>
+      <Flags />
+      <Button width={115} backgroud="#d63626" borderRadius="10px" color="white">Sign up</Button>
+      <Cart />
+      <Profile />
+    </div>
+  );
+};
 
-export default index
+export default Buttons;

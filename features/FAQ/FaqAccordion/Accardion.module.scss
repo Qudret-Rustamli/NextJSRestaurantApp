@@ -1,0 +1,19 @@
+@import "../../../styles/main";
+
+.accardion {
+  &__title {
+    font-weight: 500;
+    line-height: 45px;
+    letter-spacing: 0.15px;
+    color: $black;
+    font-size: $extraLarge;
+  }
+
+  &__desc {
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.15px;
+    font-size: $medium;
+    color: $gray_3;
+  }
+}

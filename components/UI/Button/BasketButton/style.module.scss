@@ -1,0 +1,33 @@
+@import "../../../../styles/main";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 50px !important;
+  padding-left: 0;
+  padding-right: 0;
+  min-width: 2.6rem;
+  height: 6rem;
+
+  :hover {
+    background: transparent;
+  }
+
+  &__iconPlus {
+    color: $black_2;
+    font-size: $medium;
+  }
+
+  &__count {
+    color: $black_2;
+    font-size: $medium;
+  }
+
+  &__iconMinus {
+    color: $black_2;
+    font-size: $medium;
+  }
+}

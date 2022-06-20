@@ -1,11 +1,12 @@
-import Head from 'next/head';
-import Header from '../components/Header';
-import styles from '../styles/Home.module.scss';
+import React from "react";
+import HomeFeature from "../features/Home";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div >
-      <Header />
+    <div>
+      <HomeFeature />
     </div>
   );
-}
+};
+
+export default Home;
