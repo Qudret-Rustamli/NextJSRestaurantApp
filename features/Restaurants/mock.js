@@ -407,7 +407,6 @@ export const restaurants = [
     type: "Fast Food",
     img: "../images/restaurants/dominos.png",
     address: "34 S, Qara Qarayev prospekti, Baku",
-
     products: [
       {
         id: "do1",
