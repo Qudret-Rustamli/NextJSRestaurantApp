@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './RestaurantProductCard.module.scss';
+import { useDispatch } from 'react-redux';
+import { addBasket } from '../../../Redux/BasketAction';
 
 const RestaurantProductCard = ({ product }) => {
+  const dispatch = useDispatch();
   return (
     <div className={styles.card}>
       <div className={styles.card__left}>
@@ -13,7 +16,9 @@ const RestaurantProductCard = ({ product }) => {
       </div>
       <div className={styles.card__right}>
         <p>$ {product.price}</p>
-        <button className={styles.card__right__btn}>+</button>
+        <button onClick={() => dispatch(addBasket(product))} className={styles.card__right__btn}>
+          +
+        </button>
       </div>
     </div>
   );
