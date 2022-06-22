@@ -1,7 +1,7 @@
 export const restaurants = [
   {
     id: "r1",
-    coverPhoto: "/images/Coffeemania-large.jpg",
+    coverPhoto: "/images/restaurantsCover/Coffeemania-large.jpg",
     name: "Coffee Mania",
     dess: "Coffee & Wine bar",
     price: 5,
@@ -58,13 +58,13 @@ export const restaurants = [
   },
   {
     id: "r2",
-    coverPhoto: "../images/burger-king-large.svg.png",
+    coverPhoto: "/images/restaurantsCover/burger-king-large.svg.png",
     name: "Burger King",
     dess: "BURGERS WITH CHICKEN AND FISH",
     price: 5,
     delivery: 9,
     type: "Fast Food",
-    img: "../images/restaurants/burgur-king.svg",
+    img: "/images/restaurants/burgur-king.svg",
     address: "Fuzuli street, Azadliq prospekti, Baku",
     products: [
       {
@@ -114,7 +114,7 @@ export const restaurants = [
   },
   {
     id: "r3",
-    coverPhoto: "../images/mcdonalds-large.jpg",
+    coverPhoto: "/images/restaurantsCover//mcdonalds-large.jpg",
     name: "Mc Donalds",
     dess: "McDonald's: Burgers, Fries & More. Quality Ingredients.",
     price: 5,
@@ -171,7 +171,7 @@ export const restaurants = [
   },
   {
     id: "r4",
-    coverPhoto: "/images/maharaja-large.webp",
+    coverPhoto: "/images/restaurantsCover/maharaja-large.webp",
     name: "Maharaja",
     dess: "chinese, sea-food, thai, lebanese, caribbean",
     price: 5,
@@ -228,7 +228,7 @@ export const restaurants = [
   },
   {
     id: "r5",
-    coverPhoto: "/images/dera-large.jpg",
+    coverPhoto: "/images/restaurantsCover/dera-large.jpg",
     name: "Dera Restaurant",
     dess: "Classic, long-running fast-food chain known for its burgers & fries.",
     price: 5,
@@ -286,7 +286,7 @@ export const restaurants = [
   {
     id: "r6",
     name: "Hong Kong",
-    coverPhoto: "/images/hongkong-large.jpg",
+    coverPhoto: "/images/restaurantsCover/hongkong-large.jpg",
     dess: "chinese, sea-food, thai, lebanese, caribbean",
     price: 5,
     delivery: 9,
@@ -342,7 +342,7 @@ export const restaurants = [
   },
   {
     id: "r7",
-    coverPhoto: "/images/papajohns-large.svg",
+    coverPhoto: "/images/restaurantsCover/papajohns-large.svg",
     name: "Papa Johns",
     dess: "Pizza take-out & delivery chain offering classic & specialty pizzas, plus wings, sides & desserts.",
     price: 5,
@@ -399,7 +399,7 @@ export const restaurants = [
   },
   {
     id: "r8",
-    coverPhoto: "/images/dominos-large.png",
+    coverPhoto: "/images/restaurantsCover/dominos-large.png",
     name: "Dominos",
     dess: "Delivery/carryout chain offering a wide range of pizzas & a variety of other dishes & sides",
     price: 5,

@@ -1,23 +1,25 @@
 import React from "react";
 import styles from "./RestaurantsCard.module.scss";
 
-const RestaurantsCard = (props) => {
+const RestaurantsCard = ({ restaurant }) => {
+  const { name, dess, price, delivery, img } = restaurant;
+
   return (
     <div className={styles.cart}>
       <div className={styles.cart__wrapper}>
         <div className={styles.cart__wrapper__img}>
-          <img src="/images/restaurants/burger-king.jpg" alt="" />
+          <img src={img} alt={name} />
         </div>
         <div className={styles.cart__wrapper__body}>
-          <h3>{props.name}</h3>
-          <p>{props.dess}</p>
+          <h3>{name}</h3>
+          <p>{dess}</p>
         </div>
         <div className={styles.cart__wrapper__footer}>
           <div className={styles.cart__wrapper__footer__price}>
-            <span>${props.price} delivery</span>
+            <span>${price} delivery</span>
           </div>
           <div className={styles.cart__wrapper__footer__delivery}>
-            <span>0${props.delivery} Min</span>
+            <span>{delivery} Min</span>
           </div>
         </div>
       </div>

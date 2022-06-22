@@ -4,26 +4,28 @@ import RestaurantProductCard from "../../components/Cards/RestaurantProductCard"
 import RestaurantBasketCard from "../../components/Cards/RestaurantBasketCard";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
 
-export const RestaurantContainer = () => {
+export const RestaurantContainer = ({ restaurant }) => {
+  var products = restaurant.products;
+  console.log(restaurant);
   return (
     <>
       {/* Restaurant info */}
       <div className={styles.restaurant}>
         <div className={styles.restaurant__img}>
-          <img src="/images/restaurant.svg" alt="" />
+          <img src={restaurant.img} alt={restaurant.img} />
         </div>
         <div className={styles.restaurant__desc}>
           <div className={styles.restaurant__desc__left}>
-            <h3>Papa John’s Pizza Restaurant</h3>
-            <p>19 Nizami street, Sabail, Baku</p>
+            <h3>{restaurant.name}</h3>
+            <p>{restaurant.address}</p>
           </div>
           <div className={styles.restaurant__desc__right}>
             <div className={styles.restaurant__desc__right__category}>
               <h4>Cuisine</h4>
-              <p>pizza, drink, hotdog, sendvich, roll</p>
+              <p>{restaurant.dess}</p>
             </div>
             <div className={styles.restaurant__desc__right__btns}>
-              <button>$5 Delivery</button>
+              <button>${restaurant.delivery} Delivery</button>
               <button>Go Back</button>
             </div>
           </div>
@@ -33,16 +35,9 @@ export const RestaurantContainer = () => {
       <div className={styles.products}>
         <div className={styles.products__left}>
           <h3>Products</h3>
-          <RestaurantProductCard />
-          <RestaurantProductCard />
-          <RestaurantProductCard />
-          <RestaurantProductCard />
-          <RestaurantProductCard />
-          <RestaurantProductCard />
-          <RestaurantProductCard />
-          <RestaurantProductCard />
-          <RestaurantProductCard />
-          <RestaurantProductCard />
+          {products.map((product) => (
+            <RestaurantProductCard product={product} key={product.id} />
+          ))}
         </div>
         <div className={styles.products__right}>
           <div className={styles.products__right__top}>

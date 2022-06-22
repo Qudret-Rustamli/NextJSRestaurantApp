@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../../styles/pages/restaurants.module.scss";
 import RestaurantsCard from "../../components/Cards/RestaurantsCard";
+import Link from "next/link";
 
 export const RestaurantContainer = ({ restaurants }) => {
   let unique = [...new Set(restaurants.map((res) => res.type))];
@@ -9,27 +10,28 @@ export const RestaurantContainer = ({ restaurants }) => {
   const filterRestaurants = (restaurants) => {
     if (type === "All") {
       return restaurants.map((restaurant) => (
-        <RestaurantsCard
-          key={restaurant.id}
-          name={restaurant.name}
-          dess={restaurant.dess}
-          price={restaurant.price}
-        />
+        <Link key={restaurant.id} href={`/restaurants/${restaurant.id}`}>
+          <a>
+            <RestaurantsCard restaurant={restaurant} />
+          </a>
+        </Link>
       ));
     } else {
       return restaurants
         .filter((restaurant) => restaurant.type === type)
         .map((filteredRestaurant) => (
-          <RestaurantsCard
+          <Link
             key={filteredRestaurant.id}
-            name={filteredRestaurant.name}
-            dess={filteredRestaurant.dess}
-            price={filteredRestaurant.price}
-          />
+            href={`/restaurants/${filteredRestaurant.id}`}
+          >
+            <a>
+              <RestaurantsCard restaurant={filteredRestaurant} />
+            </a>
+          </Link>
         ));
     }
   };
-
+  const id = 1;
   return (
     <div className={styles.container}>
       <div className={styles.container__left}>
@@ -45,6 +47,7 @@ export const RestaurantContainer = ({ restaurants }) => {
           </li>
           {unique.map((uniqueType) => (
             <li
+              key={uniqueType}
               className={`${styles.container__left__list__item} ${
                 type === uniqueType && styles.active
               }`}

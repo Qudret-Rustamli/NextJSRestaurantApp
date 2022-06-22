@@ -10,8 +10,16 @@
 
     &__img {
       border-radius: 99px;
-      width: 100px;
-      height: 100px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: contain;
+      background-color: #fff;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
     }
 
     &__desc {
