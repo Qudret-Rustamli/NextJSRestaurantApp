@@ -25,7 +25,7 @@ const BasketButton = ({ item }) => {
       <div onClick={() => handleIncrement(item)} className={style.container__iconPlus}>
         <div>+</div>
       </div>
-      <div className={style.container__count}>{basket.length > 0 ? basket.length : 0}</div>
+      <div className={style.container__count}>{item.quantity}</div>
       <div onClick={() => handleDecrement(item)} className={style.container__iconMinus}>
         <div>-</div>
       </div>
