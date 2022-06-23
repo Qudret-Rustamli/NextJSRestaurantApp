@@ -1,8 +1,12 @@
 import React from "react";
 import styles from "./RestaurantBasketCard.module.scss";
 import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addBasket,removeBasket } from "../../../Redux/BasketAction";
 const RestaurantBasketCard = () => {
+  const basket = useSelector((state) => state.basket);
+  const dispatch = useDispatch();
+ 
   return (
     <div className={styles.card}>
       <div className={styles.card__delete}>

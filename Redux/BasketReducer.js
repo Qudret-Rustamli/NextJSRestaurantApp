@@ -1,5 +1,6 @@
 import { ADD_BASKET_ITEM, REMOVE_BASKET_ITEM } from './types';
 
+//initial state from local storage
 const initialState = {
   basket: [],
 };

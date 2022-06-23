@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './RestaurantProductCard.module.scss';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addBasket } from '../../../Redux/BasketAction';
 
 const RestaurantProductCard = ({ product }) => {
   const dispatch = useDispatch();
+  const basket = useSelector((state) => state.basket);
+  //add to basket and local storage
+  const addToBasket = (product) => {
+    dispatch(addBasket(product));
+  };
+
+  useEffect(() => {
+    //add to basket and local storage
+    localStorage.setItem('basket', JSON.stringify(basket));
+  });
+
   return (
     <div className={styles.card}>
       <div className={styles.card__left}>
@@ -16,7 +27,7 @@ const RestaurantProductCard = ({ product }) => {
       </div>
       <div className={styles.card__right}>
         <p>$ {product.price}</p>
-        <button onClick={() => dispatch(addBasket(product))} className={styles.card__right__btn}>
+        <button onClick={() => addToBasket(product)} className={styles.card__right__btn}>
           +
         </button>
       </div>

@@ -6,7 +6,7 @@ import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlin
 
 export const RestaurantContainer = ({ restaurant }) => {
   var products = restaurant.products;
-  console.log(restaurant);
+  
   return (
     <>
       {/* Restaurant info */}
