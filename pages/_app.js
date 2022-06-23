@@ -9,12 +9,14 @@ import { store } from '../Redux/store';
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
 
-  return getLayout(
+  return (
     <Provider store={store}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </Provider>,
+      {getLayout(
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>,
+      )}
+    </Provider>
   );
 }
 
