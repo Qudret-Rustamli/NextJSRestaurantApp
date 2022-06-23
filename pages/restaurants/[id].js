@@ -1,7 +1,7 @@
-import React from 'react';
-import Head from 'next/head';
-import RestaurantContainer from '../../features/Restaurant/RestaurantContainer';
-import { restaurants } from '../../features/Restaurants/mock';
+import React from "react";
+import Head from "next/head";
+import RestaurantContainer from "../../features/Restaurants/Restaurant/RestaurantContainer";
+import { restaurants } from "../../features/Restaurants/mock";
 
 const Restaurant = ({ restaurant }) => {
   return (
@@ -16,7 +16,9 @@ const Restaurant = ({ restaurant }) => {
 
 export async function getServerSideProps({ query }) {
   const id = query.id.slice(1) - 1;
-  const res = await fetch(`https://jsonplaceholder.typicode.com/todos/${query.id}`);
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${query.id}`
+  );
   const data = await res.json();
 
   return {

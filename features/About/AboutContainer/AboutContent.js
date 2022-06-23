@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
 import AboutPonel from "../Panel/AboutPonel";
-import style from "./About.module.scss";
+import style from "../../../styles/pages/about.module.scss";
 
 export const AboutContent = () => {
   return (

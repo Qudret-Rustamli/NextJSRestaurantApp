@@ -31,7 +31,7 @@ export const RestaurantContainer = ({ restaurants }) => {
         ));
     }
   };
-  const id = 1;
+
   return (
     <div className={styles.container}>
       <div className={styles.container__left}>

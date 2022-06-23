@@ -1,20 +1,16 @@
-import React, { useEffect } from 'react';
-import styles from './RestaurantProductCard.module.scss';
-import { useDispatch, useSelector } from 'react-redux';
-import { addBasket, removeBasket } from '../../../Redux/BasketSlice';
+import React, { useEffect } from "react";
+import styles from "./RestaurantProductCard.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { addBasket, removeBasket } from "../../../../Redux/BasketSlice";
 
 const RestaurantProductCard = ({ product }) => {
   const dispatch = useDispatch();
-  const basket = useSelector((state) => state.basket);
+  const basket = useSelector((state) => state.basket.basket);
   //add to basket and local storage
   const addToBasket = (product) => {
     dispatch(addBasket(product));
+    localStorage.setItem("basket", JSON.stringify(basket));
   };
-
-  useEffect(() => {
-    //add to basket and local storage
-    localStorage.setItem('basket', JSON.stringify(basket));
-  });
 
   return (
     <div className={styles.card}>
@@ -31,7 +27,10 @@ const RestaurantProductCard = ({ product }) => {
       </div>
       <div className={styles.card__right}>
         <p>$ {product.price}</p>
-        <button onClick={() => addToBasket(product)} className={styles.card__right__btn}>
+        <button
+          onClick={() => addToBasket(product)}
+          className={styles.card__right__btn}
+        >
           +
         </button>
       </div>

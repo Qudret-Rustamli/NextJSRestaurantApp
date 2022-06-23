@@ -35,10 +35,7 @@ const BasketButton = ({ item }) => {
         <div>+</div>
       </div>
       <div className={style.container__count}>{item.quantity}</div>
-      <div
-        onClick={() => handleDecrement(item)}
-        className={style.container__iconMinus}
-      >
+      <div onClick={() => handleDecrement(item)} className={style.container__iconMinus}>
         <div>-</div>
       </div>
     </Button>
