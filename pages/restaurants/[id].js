@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import RestaurantContainer from "../../features/Restaurants/Restaurant/RestaurantContainer";
-import { restaurants } from "../../features/Restaurants/mock";
+import { restaurants } from "../../data-dev/mock";
 
 const Restaurant = ({ restaurant }) => {
   return (

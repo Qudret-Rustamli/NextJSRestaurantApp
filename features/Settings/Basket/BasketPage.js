@@ -5,15 +5,18 @@ import { useSelector, useDispatch } from "react-redux";
 import { removeBasket } from "../../../Redux/BasketSlice";
 import { useEffect } from "react";
 
-const BasketPage = ({ count }) => {
+export const BasketContainer = () => {
   const dispatch = useDispatch();
   const basket = useSelector((state) => state.basket.basket);
+
   return (
     <div className={style.container}>
       <h3 className={style.container__title}>Your Basket</h3>
       <div className={style.container__count}>
         <ShoppingBasketIcon className={style.container__count__icon} />
-        <div className={style.container__count__number}>{basket.length} items</div>
+        <div className={style.container__count__number}>
+          {basket.length} items
+        </div>
       </div>
       <div className={style.container__contents}>
         {basket.length > 0 ? (
@@ -29,5 +32,3 @@ const BasketPage = ({ count }) => {
     </div>
   );
 };
-
-export default BasketPage;

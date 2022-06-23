@@ -22,7 +22,6 @@ const StyledBadge = styled(Badge)({
 
 const Cart = () => {
   const basket = useSelector((state) => state.basket).basket;
-  console.log("runtime", basket);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
@@ -46,15 +45,13 @@ const Cart = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <IconButton aria-label="cart">
-              <StyledBadge
-                badgeContent={basket.length}
-                color="primary"
-                className={styles.badge}
-              >
-                <ShoppingCartIcon />
-              </StyledBadge>
-            </IconButton>
+            <StyledBadge
+              badgeContent={basket.length}
+              color="primary"
+              className={styles.badge}
+            >
+              <ShoppingCartIcon />
+            </StyledBadge>
           </IconButton>
         </Tooltip>
       </Box>
@@ -97,10 +94,11 @@ const Cart = () => {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <Link href="/settings/basket">
-          <a>Go to basket page</a>
-        </Link>
-
+        {basket.length >= 1 && (
+          <Link href="/settings/basket">
+            <a>Go to basket page</a>
+          </Link>
+        )}
         {basket.length >= 1 ? (
           basket.map((item) => (
             <div key={item.id}>

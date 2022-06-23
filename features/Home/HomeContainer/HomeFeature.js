@@ -1,9 +1,9 @@
-import Button from "../../components/Button";
-import BigCard from "./HomePageContents/Card/BigCard";
-import BigPanel from "./HomePageContents/Panel/BigPanel";
-import SmallPanel from "./HomePageContents/Panel/SmallPanel";
-import style from "../../styles/pages/home.module.scss";
-
+import Button from "../../../components/Button";
+import BigCard from "../HomePageContents/Card/BigCard";
+import BigPanel from "../HomePageContents/Panel/BigPanel";
+import SmallPanel from "../HomePageContents/Panel/SmallPanel";
+import style from "../../../styles/pages/home.module.scss";
+import { MdOutgoingMail, MdLocationPin } from "react-icons/md";
 //icons
 import {
   FaFacebook,
@@ -13,9 +13,8 @@ import {
   FaLinkedin,
   FaTiktok,
 } from "react-icons/fa";
-import { MdOutgoingMail, MdLocationPin } from "react-icons/md";
 
-const HomeFeature = () => {
+export const HomeFeature = () => {
   return (
     <div className={style.container}>
       {/* ====================================================================== */}
@@ -155,5 +154,3 @@ const HomeFeature = () => {
     </div>
   );
 };
-
-export default HomeFeature;

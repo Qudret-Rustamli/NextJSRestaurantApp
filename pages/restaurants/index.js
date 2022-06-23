@@ -1,8 +1,10 @@
-import RestaurantContainer from "../../features/Restaurants";
+import RestaurantContainer from "../../features/Restaurants/RestaurantsContainer";
 import Head from "next/head";
-import { restaurants } from "../../features/Restaurants/mock";
+import { restaurants } from "../../data-dev/mock";
 
-const HowItWork = ({ restaurants }) => {
+const Restaurants = ({ restaurants }) => {
+  console.log("restaurants", restaurants);
+
   return (
     <>
       <Head>
@@ -15,13 +17,13 @@ const HowItWork = ({ restaurants }) => {
 
 export async function getServerSideProps({ query }) {
   // Fetch data from external API
-  // const res = await fetch(
-  //   `https://jsonplaceholder.typicode.com/todos/${query.id}`
-  // );
-  // const data = await res.json();
+  const res = await fetch(
+    `https://jsonplaceholder.typicode.com/todos/${query.id}`
+  );
+  const data = await res.json();
 
   // Pass data to the page via props
   return { props: { restaurants } };
 }
 
-export default HowItWork;
+export default Restaurants;
