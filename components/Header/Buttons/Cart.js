@@ -65,9 +65,9 @@ const Cart = () => {
             overflowY: 'auto',
             filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
             mt: 1.5,
-            width:"700px",
-            padding:"1rem",
-            maxHeight:"300px",
+            width: '700px',
+            padding: '1rem',
+            maxHeight: '300px',
             '& .MuiAvatar-root': {
               width: 32,
               height: 32,
@@ -90,7 +90,14 @@ const Cart = () => {
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
-        {basket.length > 1 && basket.map((item) => <div key={item.id} ><BasketCard  item={item} /></div>)}
+        {basket.length >= 1 ?
+          basket.map((item) => (
+            <div key={item.id}>
+              <BasketCard item={item} />
+            </div>
+          ))
+            :<div>Basket Empty</div>
+        }
       </Menu>
     </React.Fragment>
   );
