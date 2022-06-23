@@ -1,17 +1,11 @@
 import React from 'react';
 import styles from './RestaurantBasketCard.module.scss';
 import DeleteSweepIcon from '@mui/icons-material/DeleteSweep';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  addBasket,
-  removeBasket,
-  incrementBasket,
-  decrementBasket,
-} from '../../../Redux/BasketSlice';
+import { useDispatch } from 'react-redux';
+import { removeBasket, incrementBasket, decrementBasket } from '../../../Redux/BasketSlice';
 
 const RestaurantBasketCard = ({ product }) => {
   const dispatch = useDispatch();
-  const basket = useSelector((state) => state.basket.basket);
 
   const handleRemove = (id) => {
     dispatch(removeBasket(id));
@@ -40,7 +34,9 @@ const RestaurantBasketCard = ({ product }) => {
       <div className={styles.card__count}>
         <span onClick={() => handleIncrement(product)}>+</span>
         <p>{product.quantity}</p>
-        <span onClick={() => handleDecrement(product)} id="removeItem">-</span>
+        <span onClick={() => handleDecrement(product)} id="removeItem">
+          -
+        </span>
       </div>
     </div>
   );

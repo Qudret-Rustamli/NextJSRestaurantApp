@@ -19,7 +19,12 @@ export const basketSlice = createSlice({
           ...state,
           basket: [
             ...state.basket.map((item) =>
-              item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item,
+              item.id === action.payload.id
+                ? {
+                    ...item,
+                    quantity: item.quantity < 9 ? item.quantity + 1 : item.quantity,
+                  }
+                : item,
             ),
           ],
         };
@@ -65,7 +70,6 @@ export const basketSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 export const { addBasket, removeBasket, incrementBasket, decrementBasket } = basketSlice.actions;
 
 export default basketSlice.reducer;

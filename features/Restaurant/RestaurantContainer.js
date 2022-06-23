@@ -48,13 +48,13 @@ export const RestaurantContainer = ({ restaurant }) => {
             <span className={styles.products__right__count__icon}>
               <ShoppingBasketOutlinedIcon />
             </span>
-            <span className={styles.products__right__count__icon_count}>0 items</span>
+            <span className={styles.products__right__count__icon_count}>{basket.length} items</span>
           </div>
           <div className={styles.products__right__body}>
             <div className={styles.products__right__body__list}>
-              {basket?.map((item) => 
+              {basket?.map((item) => (
                 <RestaurantBasketCard product={item} key={item.id} />
-              )}
+              ))}
             </div>
             <div className={styles.products__right__body__checkout}>
               <p>Checkout</p>
