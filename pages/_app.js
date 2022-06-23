@@ -1,26 +1,20 @@
-import "../styles/globals.scss";
-import "bootstrap/dist/css/bootstrap.min.css";
-import Layout from "../components/Layout";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/globals.scss';
+import Layout from '../components/Layout';
 
 //redux
-import { Provider } from "react-redux";
-import { store } from "../Redux/index.js";
+import { Provider } from 'react-redux';
+import { store } from '../Redux/store';
 
 function MyApp({ Component, pageProps }) {
-  const getLayout =
-    Component.getLayout ||
-    ((page) => (
-      <Provider store={store}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </Provider>
-    ));
+  const getLayout = Component.getLayout || ((page) => page);
 
   return getLayout(
     <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>,
   );
 }
 

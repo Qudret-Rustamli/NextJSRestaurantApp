@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 export const ADD_BASKET_ITEM = "ADD_BASKET_ITEM";
 export const REMOVE_BASKET_ITEM = "REMOVE_BASKET_ITEM";
+=======
+export const ADD_BASKET_ITEM = 'ADD_BASKET_ITEM';
+export const REMOVE_BASKET_ITEM = 'REMOVE_BASKET_ITEM';
+>>>>>>> c9a78861fb48a1c9b796c4632cdcc7d5f352a7c4

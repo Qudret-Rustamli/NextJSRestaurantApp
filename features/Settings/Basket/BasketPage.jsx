@@ -1,11 +1,14 @@
-import React from "react";
 import style from "./style.module.scss";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import BasketCard from "../../../components/Cards/BasketCard/BasketCard";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeBasket } from "../../../Redux/BasketSlice";
+import { useEffect } from "react";
 
 const BasketPage = ({ count }) => {
-  // const dispatch = useDispatch();
+  /* const dispatch = useDispatch(); */
+  /* const basket = useSelector((state) => state.basket); */
+  /* const basket = JSON.parse(localStorage.getItem('basket')); */
 
   return (
     <div className={style.container}>
@@ -15,9 +18,9 @@ const BasketPage = ({ count }) => {
         <div className={style.container__count__number}>{count || 0} items</div>
       </div>
       <div className={style.container__contents}>
-        {/* {basket?.map((item) => (
+        {/* basket?.map((item) => (
           <BasketCard key={item.id} item={item} />
-        ))} */}
+        )) */}
       </div>
       <div className={style.container__button}>
         <span className={style.container__button__checkout}>Checkout</span>
