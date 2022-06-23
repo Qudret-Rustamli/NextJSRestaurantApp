@@ -1,12 +1,12 @@
-import style from './style.module.scss';
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import BasketCard from '../../../components/Cards/BasketCard/BasketCard';
-import { useSelector } from 'react-redux';
-import { removeBasket } from '../../../Redux/BasketAction';
+import React from "react";
+import style from "./style.module.scss";
+import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import BasketCard from "../../../components/Cards/BasketCard/BasketCard";
+import { useDispatch, useSelector } from "react-redux";
 
 const BasketPage = ({ count }) => {
-  const basket = useSelector((state) => state.basket.basket);
-  console.log(basket);
+  // const dispatch = useDispatch();
+
   return (
     <div className={style.container}>
       <h3 className={style.container__title}>Your Basket</h3>

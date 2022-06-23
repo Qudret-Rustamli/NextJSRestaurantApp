@@ -1,10 +1,10 @@
-import '../styles/globals.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Layout from '../components/Layout';
+import "../styles/globals.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Layout from "../components/Layout";
 
 //redux
-import { Provider } from 'react-redux';
-import { store } from '../Redux/index.js'
+import { Provider } from "react-redux";
+import { store } from "../Redux/index.js";
 
 function MyApp({ Component, pageProps }) {
   const getLayout =
@@ -16,10 +16,11 @@ function MyApp({ Component, pageProps }) {
         </Layout>
       </Provider>
     ));
+
   return getLayout(
     <Provider store={store}>
       <Component {...pageProps} />
-    </Provider>,
+    </Provider>
   );
 }
 

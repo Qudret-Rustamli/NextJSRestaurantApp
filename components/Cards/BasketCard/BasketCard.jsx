@@ -3,8 +3,12 @@ import BasketButton from "../../UI/Button/BasketButton/BasketButton";
 import style from "./style.module.scss";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { IconButton } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
 
-const BasketCard = ({ img, title, price, actions }) => {
+const BasketCard = ({ img, title, price }) => {
+  const data = useSelector((state) => state.basket);
+  console.log("basket", data.basket);
+
   return (
     <>
       <hr />
