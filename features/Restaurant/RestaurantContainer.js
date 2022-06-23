@@ -1,12 +1,16 @@
-import React from "react";
-import styles from "../../styles/pages/restaurant.module.scss";
-import RestaurantProductCard from "../../components/Cards/RestaurantProductCard";
-import RestaurantBasketCard from "../../components/Cards/RestaurantBasketCard";
-import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
+import React, { useEffect } from 'react';
+import styles from '../../styles/pages/restaurant.module.scss';
+import RestaurantProductCard from '../../components/Cards/RestaurantProductCard';
+import RestaurantBasketCard from '../../components/Cards/RestaurantBasketCard';
+import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBasket, removeBasket } from '../../Redux/BasketSlice';
 
 export const RestaurantContainer = ({ restaurant }) => {
   var products = restaurant.products;
-  
+  const dispatch = useDispatch();
+  const basket = useSelector((state) => state.basket.basket);
+
   return (
     <>
       {/* Restaurant info */}
@@ -44,20 +48,13 @@ export const RestaurantContainer = ({ restaurant }) => {
             <span className={styles.products__right__count__icon}>
               <ShoppingBasketOutlinedIcon />
             </span>
-            <span className={styles.products__right__count__icon_count}>
-              0 items
-            </span>
+            <span className={styles.products__right__count__icon_count}>0 items</span>
           </div>
           <div className={styles.products__right__body}>
             <div className={styles.products__right__body__list}>
-              <RestaurantBasketCard />
-              <RestaurantBasketCard />
-              <RestaurantBasketCard />
-              <RestaurantBasketCard />
-              <RestaurantBasketCard />
-              <RestaurantBasketCard />
-              <RestaurantBasketCard />
-              <RestaurantBasketCard />
+              {basket?.map((item) => 
+                <RestaurantBasketCard product={item} key={item.id} />
+              )}
             </div>
             <div className={styles.products__right__body__checkout}>
               <p>Checkout</p>

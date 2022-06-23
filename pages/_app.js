@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 
 //redux
 import { Provider } from 'react-redux';
-import store from '../Redux';
+import { store } from '../Redux/store';
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);

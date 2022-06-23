@@ -1,4 +1,4 @@
-import { ADD_BASKET_ITEM, REMOVE_BASKET_ITEM } from './types';
+import { ADD_BASKET_ITEM, REMOVE_BASKET_ITEM } from '../types';
 
 export const addBasket = (product) => {
   return {

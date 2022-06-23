@@ -4,15 +4,19 @@ import style from './style.module.scss';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { IconButton } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
+import { addBasket, removeBasket } from '../../../Redux/BasketSlice';
 
 const BasketCard = ({ img, title, price }) => {
- 
+  const dispatch = useDispatch();
+  const basket = useSelector((state) => state.basket);
+
+  console.log(1000, basket);
   return (
     <>
       <hr />
       <div className={style.container}>
         <div className={style.container__delete}>
-          <IconButton>
+          <IconButton >
             <DeleteIcon />
           </IconButton>
         </div>

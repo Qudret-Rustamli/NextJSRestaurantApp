@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styles from './RestaurantProductCard.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBasket } from '../../../Redux/BasketAction';
+import { addBasket, removeBasket } from '../../../Redux/BasketSlice';
 
 const RestaurantProductCard = ({ product }) => {
   const dispatch = useDispatch();
