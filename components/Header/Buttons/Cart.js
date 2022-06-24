@@ -3,12 +3,13 @@ import IconButton from '@mui/material/IconButton';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styles from '../Header.module.scss';
-import { styled } from '@material-ui/core';
 import Box from '@mui/material/Box';
 import Menu from '@mui/material/Menu';
 import Tooltip from '@mui/material/Tooltip';
-import { useSelector } from 'react-redux';
 import BasketCard from '../../Cards/BasketCard/BasketCard';
+import { useSelector } from 'react-redux';
+import { styled } from '@material-ui/core';
+import Link from 'next/link';
 
 const StyledBadge = styled(Badge)({
   '& .MuiBadge-badge': {
@@ -20,11 +21,10 @@ const StyledBadge = styled(Badge)({
 });
 
 const Cart = () => {
-  const basket = useSelector((state) => state.basket).basket;
-  console.log('runtime', basket);
+  const basket = useSelector((state) => state.basket.basket);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
+  const totalPrice = basket.reduce((total, item) => total + item.price * item.quantity, 0);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -90,14 +90,24 @@ const Cart = () => {
         }}
         transformOrigin={{ horizontal: 'right', vertical: 'top' }}
         anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
-        {basket.length >= 1 ?
+        <div style={{display:"flex",justifyContent:"space-between"}}>
+          <Link href="/settings/basket">
+            <a>Go to basket page</a>
+          </Link>
+          <div style={{fontSize:"1rem",color:"red",fontWeight:"500"}}>
+            {`Total price: ${totalPrice} $`}
+          </div>
+        </div>
+
+        {basket.length >= 1 ? (
           basket.map((item) => (
             <div key={item.id}>
               <BasketCard item={item} />
             </div>
           ))
-            :<div>Basket Empty</div>
-        }
+        ) : (
+          <div>Basket is empty</div>
+        )}
       </Menu>
     </React.Fragment>
   );

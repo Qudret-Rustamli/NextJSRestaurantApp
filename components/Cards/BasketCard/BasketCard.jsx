@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeBasket } from '../../../Redux/BasketSlice';
 
 const BasketCard = ({ item }) => {
+  console.log(item, 895);
   console.log('first item', item.id);
   const dispatch = useDispatch();
 
@@ -28,8 +29,10 @@ const BasketCard = ({ item }) => {
             <img src={item.img} alt={item.title} />
           </div>
           <div className={style.container__left__content}>
-            <div className={style.container__left__content__title}>{item.title || 'Product'}</div>
-            <div className={style.container__left__content__price}>$ {item.price || 0}</div>
+            <div className={style.container__left__content__title}>{item.name}</div>
+            <div className={style.container__left__content__price}>
+              $ {item.price * item.quantity}
+            </div>
           </div>
         </div>
 

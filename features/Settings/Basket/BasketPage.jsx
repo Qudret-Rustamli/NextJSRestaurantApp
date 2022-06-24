@@ -1,13 +1,12 @@
 import style from './style.module.scss';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import BasketCard from '../../../components/Cards/BasketCard/BasketCard';
-import { useSelector, useDispatch } from 'react-redux';
-import { removeBasket } from '../../../Redux/BasketSlice';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-const BasketPage = ({ count }) => {
-  const dispatch = useDispatch();
+const BasketPage = () => {
   const basket = useSelector((state) => state.basket.basket);
+  
+  const totalPrice = basket.reduce((total, item) =>  total + item.price * item.quantity, 0);
   return (
     <div className={style.container}>
       <h3 className={style.container__title}>Your Basket</h3>
@@ -24,7 +23,7 @@ const BasketPage = ({ count }) => {
       </div>
       <div className={style.container__button}>
         <span className={style.container__button__checkout}>Checkout</span>
-        <span className={style.container__button__price}>$ 40</span>
+        <span className={style.container__button__price}>$ {totalPrice}</span>
       </div>
     </div>
   );

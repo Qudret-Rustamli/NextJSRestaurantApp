@@ -1,0 +1,11 @@
+.containerInput {
+  width: 90%;
+  height: 50px;
+  margin: 0 1rem 1rem 1rem;
+}
+
+.containerInput input {
+  width: 100%;
+  height: 100%;
+}
+/*# sourceMappingURL=style.module.css.map */

@@ -5,7 +5,8 @@ import Layout from '../components/Layout';
 //redux
 import { Provider } from 'react-redux';
 import { store } from '../Redux/store';
-
+//lang context
+import { appWithTranslation } from 'next-i18next';
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
 
@@ -20,4 +21,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);

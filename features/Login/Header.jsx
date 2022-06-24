@@ -1,10 +1,10 @@
 import React from "react";
-import styles from "./Header.module.scss";
+import styles from "./style.module.scss";
+import Flags from "../../components/Header/Buttons/Flags";
+import Logo from "../../components/Header/Logo";
 import { Container, Row, Col } from "reactstrap";
-import Flags from "./Buttons/Flags";
-import Logo from "./Logo";
 
-const SecondHeader = () => {
+const Header = () => {
   return (
     <Container>
       <Row className={styles.containerS}>
@@ -20,4 +20,4 @@ const SecondHeader = () => {
   );
 };
 
-export default SecondHeader;
+export default Header;

@@ -1,4 +1,13 @@
-@import '../../styles//main.scss';
+@import "../../styles//main.scss";
+
+.containerS {
+  height: 80px;
+  background-color: $backgroundd;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between !important;
+  align-items: center;
+}
 
 .container {
   display: flex;
@@ -18,9 +27,6 @@
       font-size: 1.5rem;
       padding: 1rem;
     }
-  }
-
-  &__forms {
   }
 
   .form_control {

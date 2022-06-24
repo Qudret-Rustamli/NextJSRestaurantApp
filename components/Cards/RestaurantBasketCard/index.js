@@ -26,8 +26,8 @@ const RestaurantBasketCard = ({ product }) => {
       <div className={styles.card__desc}>
         <img src="/images/product-test.svg" alt="" />
         <div>
-          <p>Papa John’s Pizza Restaurant</p>
-          <p>$ {product.price}</p>
+          <p>{product.name}</p>
+          <p>${product.price * product.quantity}</p>
         </div>
       </div>
 

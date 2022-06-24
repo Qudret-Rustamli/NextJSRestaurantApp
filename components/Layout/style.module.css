@@ -1,0 +1,18 @@
+@forward "./utils/colors";
+@forward "./utils/breakpoints";
+@forward "./utils/mixins";
+@forward "./utils/fonts";
+.layoutContainer .headerContainer {
+  width: 95vw;
+  margin: 20px auto;
+}
+
+.layoutContainer .contentContainer {
+  width: 95vw;
+  margin: 0 auto;
+}
+
+.layoutContainer .footerContainer {
+  margin-top: 3rem;
+}
+/*# sourceMappingURL=style.module.css.map */

@@ -16,17 +16,17 @@ export const basketSlice = createSlice({
         };
       } else {
         return {
+          //update quantity and price
           ...state,
-          basket: [
-            ...state.basket.map((item) =>
-              item.id === action.payload.id
-                ? {
-                    ...item,
-                    quantity: item.quantity < 9 ? item.quantity + 1 : item.quantity,
-                  }
-                : item,
-            ),
-          ],
+          basket: state.basket.map((item) => {
+            if (item.id === action.payload.id) {
+              return {
+                ...item,
+                quantity: item.quantity + 1,
+              };
+            }
+            return item;
+          }),
         };
       }
     },
@@ -43,9 +43,18 @@ export const basketSlice = createSlice({
       } else {
         return {
           ...state,
+          //update quantity and price
           basket: [
             ...state.basket.map((item) =>
-              item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item,
+              item.id === action.payload.id
+                ? {
+                    ...item,
+                    quantity:  item.quantity + 1 ,
+                    //update total price for quantity
+                    
+                   
+                  }
+                : item,
             ),
           ],
         };
@@ -60,10 +69,18 @@ export const basketSlice = createSlice({
         };
       } else {
         return {
+          //update quantity and price
           ...state,
-          basket: state.basket.map((item) =>
-            item.id === action.payload.id ? { ...item, quantity: item.quantity - 1 } : item,
-          ),
+          basket: [
+            ...state.basket.map((item) =>
+              item.id === action.payload.id
+                ? {
+                    ...item,
+                    quantity:  item.quantity - 1 ,
+                  }
+                : item,
+            ),
+          ],
         };
       }
     },
