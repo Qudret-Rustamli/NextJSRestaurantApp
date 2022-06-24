@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "../../../../styles/pages/restaurant.module.scss";
 import RestaurantBasketCard from "../../../../components/Cards/RestaurantBasketCard";
 import RestaurantProductCard from "../RestaurantProductCard";
 import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 export const RestaurantContainer = ({ restaurant }) => {
-  var products = restaurant.products;
   const basket = useSelector((state) => state.basket.basket);
+  const products = restaurant.products;
 
   return (
     <>

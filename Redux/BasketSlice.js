@@ -1,14 +1,17 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   basket: [],
 };
 
 export const basketSlice = createSlice({
-  name: 'basket',
+  name: "basket",
   initialState,
   reducers: {
     addBasket: (state = initialState, action) => {
-      const existingItem = state.basket.find((item) => item.id === action.payload.id);
+      const existingItem = state.basket.find(
+        (item) => item.id === action.payload.id
+      );
+
       if (!existingItem) {
         return {
           ...state,
@@ -22,13 +25,20 @@ export const basketSlice = createSlice({
               item.id === action.payload.id
                 ? {
                     ...item,
-                    quantity: item.quantity < 9 ? item.quantity + 1 : item.quantity,
+                    quantity:
+                      item.quantity < 9 ? item.quantity + 1 : item.quantity,
                   }
-                : item,
+                : item
             ),
           ],
         };
       }
+    },
+    replaceBasket: (state, action) => {
+      return {
+        ...state,
+        basket: action.payload,
+      };
     },
     removeBasket: (state, action) => {
       return {
@@ -39,13 +49,15 @@ export const basketSlice = createSlice({
     incrementBasket: (state, action) => {
       //if quantity great than 10, message error
       if (action.payload.quantity > 9) {
-        alert('You can not add more than 10 items');
+        alert("You can not add more than 10 items");
       } else {
         return {
           ...state,
           basket: [
             ...state.basket.map((item) =>
-              item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item,
+              item.id === action.payload.id
+                ? { ...item, quantity: item.quantity + 1 }
+                : item
             ),
           ],
         };
@@ -62,7 +74,9 @@ export const basketSlice = createSlice({
         return {
           ...state,
           basket: state.basket.map((item) =>
-            item.id === action.payload.id ? { ...item, quantity: item.quantity - 1 } : item,
+            item.id === action.payload.id
+              ? { ...item, quantity: item.quantity - 1 }
+              : item
           ),
         };
       }
@@ -70,6 +84,12 @@ export const basketSlice = createSlice({
   },
 });
 
-export const { addBasket, removeBasket, incrementBasket, decrementBasket } = basketSlice.actions;
+export const {
+  addBasket,
+  removeBasket,
+  incrementBasket,
+  decrementBasket,
+  replaceBasket,
+} = basketSlice.actions;
 
 export default basketSlice.reducer;
