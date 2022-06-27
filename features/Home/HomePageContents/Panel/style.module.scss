@@ -57,10 +57,11 @@
     transform: scale(1) rotate(-30deg);
   }
 }
+
 .smallPanelContainer {
   margin: auto;
-  width: 40%;
-  height: 45vh;
+  width: 60%;
+  height: 39rem;
   background-color: $backgroundd;
   border-radius: 2.5rem;
   transform: rotate(30deg);
@@ -79,8 +80,4 @@
       object-fit: contain;
     }
   }
-}
-.smallPanelContainer:hover {
-  cursor: pointer;
-  animation: animateScale infinite 1.8s;
 }

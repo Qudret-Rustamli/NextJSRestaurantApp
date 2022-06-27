@@ -59,7 +59,8 @@ export const HomeFeature = () => {
       <div className={style.container__featureContent}>
         <div className={style.container__featureContent__title}>Features</div>
         <div className={style.container__featureContent__content}>
-          Lorem Ipsum Is Placeholder Commonly Used In The Graphic
+          Lorem ipsum is placeholder text commonly used in the graphic, print,
+          and publishing industries for previewing layouts and visual mockups.
         </div>
         <div className={style.container__featureContent__cards}>
           <BigCard />
