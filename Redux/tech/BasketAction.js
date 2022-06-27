@@ -13,3 +13,10 @@ export const removeBasket = (id) => {
     payload: id,
   };
 };
+
+export const replaceBasket = (products) => {
+  return {
+    type: REMOVE_BASKET_ITEM,
+    payload: products,
+  };
+};

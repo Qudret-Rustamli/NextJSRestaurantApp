@@ -9,6 +9,7 @@ export const basketSlice = createSlice({
   reducers: {
     addBasket: (state = initialState, action) => {
       const existingItem = state.basket.find((item) => item.id === action.payload.id);
+
       if (!existingItem) {
         return {
           ...state,
@@ -18,17 +19,24 @@ export const basketSlice = createSlice({
         return {
           //update quantity and price
           ...state,
-          basket: state.basket.map((item) => {
-            if (item.id === action.payload.id) {
-              return {
-                ...item,
-                quantity: item.quantity + 1,
-              };
-            }
-            return item;
-          }),
+          basket: [
+            ...state.basket.map((item) =>
+              item.id === action.payload.id
+                ? {
+                    ...item,
+                    quantity: item.quantity < 9 ? item.quantity + 1 : item.quantity,
+                  }
+                : item,
+            ),
+          ],
         };
       }
+    },
+    replaceBasket: (state, action) => {
+      return {
+        ...state,
+        basket: action.payload,
+      };
     },
     removeBasket: (state, action) => {
       return {
@@ -46,15 +54,7 @@ export const basketSlice = createSlice({
           //update quantity and price
           basket: [
             ...state.basket.map((item) =>
-              item.id === action.payload.id
-                ? {
-                    ...item,
-                    quantity:  item.quantity + 1 ,
-                    //update total price for quantity
-                    
-                   
-                  }
-                : item,
+              item.id === action.payload.id ? { ...item, quantity: item.quantity + 1 } : item,
             ),
           ],
         };
@@ -71,22 +71,16 @@ export const basketSlice = createSlice({
         return {
           //update quantity and price
           ...state,
-          basket: [
-            ...state.basket.map((item) =>
-              item.id === action.payload.id
-                ? {
-                    ...item,
-                    quantity:  item.quantity - 1 ,
-                  }
-                : item,
-            ),
-          ],
+          basket: state.basket.map((item) =>
+            item.id === action.payload.id ? { ...item, quantity: item.quantity - 1 } : item,
+          ),
         };
       }
     },
   },
 });
 
-export const { addBasket, removeBasket, incrementBasket, decrementBasket } = basketSlice.actions;
+export const { addBasket, removeBasket, incrementBasket, decrementBasket, replaceBasket } =
+  basketSlice.actions;
 
 export default basketSlice.reducer;

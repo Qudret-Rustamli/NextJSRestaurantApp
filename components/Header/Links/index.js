@@ -24,7 +24,6 @@ const Links = () => {
       <Link href="/faq">
         <a>FAQ`s</a>
       </Link>
-      ,
     </div>
   );
 };

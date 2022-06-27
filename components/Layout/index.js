@@ -1,14 +1,17 @@
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
 import Footer from "../Footer/Footer";
 import Header from "../Header";
 import style from "./style.module.scss";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { replaceBasket } from "../../redux/BasketSlice";
 
 const Layout = ({ children }) => {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     let storage = localStorage.getItem("basket");
+    if (storage !== null) dispatch(replaceBasket(JSON.parse(storage)));
   }, []);
 
   return (

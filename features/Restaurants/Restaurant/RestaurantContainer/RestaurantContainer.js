@@ -1,14 +1,15 @@
-import React from "react";
-import styles from "../../../../styles/pages/restaurant.module.scss";
-import RestaurantBasketCard from "../../../../components/Cards/RestaurantBasketCard";
-import RestaurantProductCard from "../RestaurantProductCard";
-import ShoppingBasketOutlinedIcon from "@mui/icons-material/ShoppingBasketOutlined";
-import { useSelector } from "react-redux";
+import React from 'react';
+import styles from '../../../../styles/pages/restaurant.module.scss';
+import RestaurantBasketCard from '../../../../components/Cards/RestaurantBasketCard';
+import RestaurantProductCard from '../RestaurantProductCard';
+import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
+import { useSelector } from 'react-redux';
 
 export const RestaurantContainer = ({ restaurant }) => {
-  var products = restaurant.products;
   const basket = useSelector((state) => state.basket.basket);
-  const totalPrice = basket.reduce((total, item) =>  total + item.price * item.quantity, 0);
+  const products = restaurant.products;
+  const totalPrice = basket.reduce((total, item) => total + item.price * item.quantity, 0);
+
   return (
     <>
       {/* Restaurant info */}
@@ -46,9 +47,7 @@ export const RestaurantContainer = ({ restaurant }) => {
             <span className={styles.products__right__count__icon}>
               <ShoppingBasketOutlinedIcon />
             </span>
-            <span className={styles.products__right__count__icon_count}>
-              {basket.length} items
-            </span>
+            <span className={styles.products__right__count__icon_count}>{basket.length} items</span>
           </div>
           <div className={styles.products__right__body}>
             <div className={styles.products__right__body__list}>

@@ -9,13 +9,15 @@ const RestaurantProductCard = ({ product }) => {
 
   const addToBasket = (product) => {
     dispatch(addBasket(product));
-    let stoarage = localStorage.getItem("basket");
-    if (!stoarage) localStorage.setItem("basket", JSON.stringify(product));
+    let storage = localStorage.getItem("basket");
+    // console.log("storage", storage);
+    if (storage === null)
+      localStorage.setItem("basket", JSON.stringify(product));
   };
 
   useEffect(() => {
-    if (basket.length === 0) return;
-    localStorage.setItem("basket", JSON.stringify(basket));
+    if (basket.length > 0)
+      localStorage.setItem("basket", JSON.stringify(basket));
   }, [basket]);
 
   return (

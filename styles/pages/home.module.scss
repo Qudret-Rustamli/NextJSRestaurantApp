@@ -18,6 +18,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
 
   &__mainContent {
     display: flex;
@@ -41,7 +42,7 @@
         font-weight: 900;
         color: $mainBlack;
       }
-      
+
       &__content {
         font-size: $extraLarge;
         color: $gray_3;
@@ -72,15 +73,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 4rem;
+
     &__title {
-      font-weight: bold;
-      font-size: 3.5rem;
+      font-weight: 900;
+      font-size: 2.5rem;
+      color: $mainBlack;
+      letter-spacing: 0.03em;
     }
+
     &__content {
       font-size: 1.8rem;
       color: $gray_4;
-      margin: 1.5rem auto;
+      margin: 1rem auto 2.5rem;
+      font-weight: 400;
+      font-size: $extraLarge;
+      letter-spacing: 0.03em;
+      color: $gray_3;
+      width: 75%;
+      text-align: center;
     }
+
     &__cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -93,28 +106,31 @@
   &__Content__first {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 8rem;
+
     &__left {
-      width: 50%;
-      height: 70vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      width: 40%;
+
       &__title {
-        font-weight: bold;
-        font-size: 3.5rem;
-        text-align: justify;
+        font-size: 3.1rem;
+        font-weight: 900;
+        letter-spacing: 0.03em;
+        color: $mainBlack;
       }
+
       &__content {
-        text-align: justify;
-        font-size: 1.2rem;
-        color: $gray_4;
+        font-size: $extraLarge;
+        color: $gray_3;
         margin-top: 1.5rem;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0.03em;
       }
     }
     &__right {
       width: 50%;
+      transform: translateY(2rem);
     }
   }
 
@@ -122,24 +138,30 @@
   &__Content__second {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 6rem;
+
     &__left {
       width: 50%;
+      transform: translateY(2rem);
     }
+
     &__right {
-      width: 50%;
+      width: 40%;
       height: 70vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       &__title {
-        font-weight: bold;
-        font-size: 3.5rem;
-        text-align: justify;
+        font-size: 3.1rem;
+        font-weight: 900;
+        letter-spacing: 0.03em;
+        color: $mainBlack;
       }
+
       &__content {
-        text-align: justify;
         font-size: 1.2rem;
         color: $gray_4;
         margin-top: 1.5rem;
@@ -149,21 +171,24 @@
   &__Content__third {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 6rem;
+
     &__left {
-      width: 50%;
+      width: 40%;
       height: 70vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+
       &__title {
-        font-weight: bold;
-        font-size: 3.5rem;
-        text-align: justify;
+        font-size: 3.1rem;
+        font-weight: 900;
+        letter-spacing: 0.03em;
+        color: $mainBlack;
       }
       &__content {
-        text-align: justify;
         font-size: 1.2rem;
         color: $gray_4;
         margin-top: 1.5rem;
@@ -171,6 +196,7 @@
     }
     &__right {
       width: 50%;
+      transform: translateY(2rem);
     }
   }
 
@@ -181,6 +207,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20rem;
+    margin-top: 9rem;
 
     &__title {
       font-weight: bold;
@@ -201,7 +228,7 @@
 
   &__footer {
     position: absolute;
-    top: 495vh;
+    top: 615vh;
     width: 70vw;
     color: white;
     height: 50vh;
@@ -209,6 +236,7 @@
     border-radius: 3rem;
     box-shadow: rgba(21, 21, 22, 0.3) 0px 1px 2px 0px,
       rgba(16, 16, 16, 0.15) 0px 1px 3px 1px;
+
     &__icons {
       color: white;
       display: flex;
