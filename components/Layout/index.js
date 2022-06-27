@@ -1,10 +1,16 @@
-import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
-import Footer from '../Footer/Footer';
-import Header from '../Header';
-import style from './style.module.scss';
+import React from "react";
+import { Container, Row, Col } from "reactstrap";
+import Footer from "../Footer/Footer";
+import Header from "../Header";
+import style from "./style.module.scss";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const Layout = ({ children }) => {
+  useEffect(() => {
+    let storage = localStorage.getItem("basket");
+  }, []);
+
   return (
     <div className={style.layoutContainer}>
       <div className={style.headerContainer}>

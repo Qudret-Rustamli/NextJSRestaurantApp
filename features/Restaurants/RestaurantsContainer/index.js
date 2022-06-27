@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "../../styles/pages/restaurants.module.scss";
-import RestaurantsCard from "../../components/Cards/RestaurantsCard";
+import styles from "../../../styles/pages/restaurants.module.scss";
+import RestaurantsCard from "../../../components/Cards/RestaurantsCard";
 import Link from "next/link";
 
-export const RestaurantContainer = ({ restaurants }) => {
+const RestaurantContainer = ({ restaurants }) => {
   let unique = [...new Set(restaurants.map((res) => res.type))];
   const [type, setType] = React.useState("All");
 
@@ -65,3 +65,5 @@ export const RestaurantContainer = ({ restaurants }) => {
     </div>
   );
 };
+
+export default RestaurantContainer;

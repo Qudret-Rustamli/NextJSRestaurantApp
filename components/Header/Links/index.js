@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import style from './style.module.scss';
 import Link from 'next/link';
+import Auth from '../../../HOC/authHOC';
 const Links = () => {
   const [links, setLinks] = useState();
 
@@ -9,9 +10,11 @@ const Links = () => {
       <Link href="/" onClick={() => setLinks('')}>
         <a>Home</a>
       </Link>
-      <Link href="/restaurants">
-        <a>Restaurants</a>
-      </Link>
+      {Auth(
+        <Link href="/restaurants">
+          <a>Restaurants</a>
+        </Link>,
+      )}
       <Link href="/about">
         <a>About us</a>
       </Link>
@@ -21,6 +24,7 @@ const Links = () => {
       <Link href="/faq">
         <a>FAQ`s</a>
       </Link>
+      ,
     </div>
   );
 };

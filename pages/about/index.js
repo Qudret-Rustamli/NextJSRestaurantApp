@@ -1,6 +1,6 @@
-import React from "react";
-import Head from "next/head";
-import AboutContent from "../../features/About/AboutContainer";
+import React from 'react';
+import Head from 'next/head';
+import AboutContent from '../../features/About/AboutContainer';
 
 const AboutUs = () => {
   return (

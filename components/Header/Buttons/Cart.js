@@ -21,7 +21,7 @@ const StyledBadge = styled(Badge)({
 });
 
 const Cart = () => {
-  const basket = useSelector((state) => state.basket.basket);
+  const basket = useSelector((state) => state.basket).basket;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const totalPrice = basket.reduce((total, item) => total + item.price * item.quantity, 0);
@@ -43,12 +43,15 @@ const Cart = () => {
             sx={{ ml: 2 }}
             aria-controls={open ? 'account-menu' : undefined}
             aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}>
-            <IconButton aria-label="cart">
-              <StyledBadge badgeContent={basket.length} color="primary" className={styles.badge}>
-                <ShoppingCartIcon />
-              </StyledBadge>
-            </IconButton>
+            aria-expanded={open ? "true" : undefined}
+          >
+            <StyledBadge
+              badgeContent={basket.length}
+              color="primary"
+              className={styles.badge}
+            >
+              <ShoppingCartIcon />
+            </StyledBadge>
           </IconButton>
         </Tooltip>
       </Box>
@@ -88,17 +91,14 @@ const Cart = () => {
             },
           },
         }}
-        transformOrigin={{ horizontal: 'right', vertical: 'top' }}
-        anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}>
-        <div style={{display:"flex",justifyContent:"space-between"}}>
+        transformOrigin={{ horizontal: "right", vertical: "top" }}
+        anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+      >
+        {basket.length >= 1 && (
           <Link href="/settings/basket">
             <a>Go to basket page</a>
           </Link>
-          <div style={{fontSize:"1rem",color:"red",fontWeight:"500"}}>
-            {`Total price: ${totalPrice} $`}
-          </div>
-        </div>
-
+        )}
         {basket.length >= 1 ? (
           basket.map((item) => (
             <div key={item.id}>

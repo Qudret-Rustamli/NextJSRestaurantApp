@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap';
 import AboutPonel from '../Panel/AboutPonel';
 import style from '../../../styles/pages/about.module.scss';
 
-export const AboutContent = (props) => {
+export const AboutContent = () => {
   return (
     <Container>
       <Row className={style.cont}>
@@ -17,7 +17,6 @@ export const AboutContent = (props) => {
             Home Or Billing Address When Paying With A Credit Card. Please Note That Klarna Payments
             Require That Your Order Is Shipped To Your Registered Home Address.
           </p>
-          {props.locale}
         </Col>
         <Col md={6} className={style.panel}>
           <AboutPonel />
@@ -26,11 +25,3 @@ export const AboutContent = (props) => {
     </Container>
   );
 };
-
-export function getStaticProps({ locale }) {
-  return {
-    props: {
-      locale,
-    },
-  };
-}

@@ -9,7 +9,9 @@ const Buttons = () => {
   return (
     <div className={styles.buttons}>
       <Flags />
-      <Button width={115} backgroud="#d63626" borderRadius="10px" color="white">Sign up</Button>
+      <Button width={115} backgroud="#d63626" borderRadius="10px" color="white">
+        Sign up
+      </Button>
       <Cart />
       <Profile />
     </div>
