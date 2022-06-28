@@ -5,6 +5,10 @@ import Layout from '../components/Layout';
 import { Provider } from 'react-redux';
 import { store } from '../Redux/store';
 
+//react-tastify
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
 
@@ -13,6 +17,17 @@ function MyApp({ Component, pageProps }) {
       {getLayout(
         <Layout>
           <Component {...pageProps} />
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={true}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
         </Layout>,
       )}
     </Provider>

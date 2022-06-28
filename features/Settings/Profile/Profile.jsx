@@ -1,27 +1,27 @@
-import React from "react";
-import * as Yup from "yup";
-import FormContainer from "../../../components/Form/FormContainer";
-import FormControl from "../../../components/Form/FormControl";
+import React from 'react';
+import * as Yup from 'yup';
+import FormContainer from '../../../components/Form/FormContainer';
+import FormControl from '../../../components/Form/FormControl';
 
-import style from "./style.module.scss";
-
+import style from './style.module.scss';
 const ProfileForm = () => {
+  
   const initialValues = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    city: "",
-    address: "",
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    city: '',
+    address: '',
   };
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("Required"),
-    lastName: Yup.string().required("Required"),
-    email: Yup.string().email("Invalid email").required("Required"),
-    phone: Yup.string().required("Required"),
-    city: Yup.string().required("Required"),
-    address: Yup.string().required("Required"),
+    firstName: Yup.string().required('Required'),
+    lastName: Yup.string().required('Required'),
+    email: Yup.string().email('Invalid email').required('Required'),
+    phone: Yup.string().required('Required'),
+    city: Yup.string().required('Required'),
+    address: Yup.string().required('Required'),
   });
 
   return (
@@ -30,7 +30,7 @@ const ProfileForm = () => {
       <FormContainer
         initialValues={initialValues}
         validationSchema={validationSchema}
-      >
+        collectionName={'registration'}>
         <div className={style.form_control}>
           <FormControl
             control="input"
@@ -68,13 +68,7 @@ const ProfileForm = () => {
           />
         </div>
         <div className={style.form_control}>
-          <FormControl
-            control="input"
-            type="text"
-            label="City"
-            name="city"
-            variant="outlined"
-          />
+          <FormControl control="input" type="text" label="City" name="city" variant="outlined" />
         </div>
         <div className={style.form_control}>
           <FormControl

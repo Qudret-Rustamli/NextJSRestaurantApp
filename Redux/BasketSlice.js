@@ -80,7 +80,7 @@ export const basketSlice = createSlice({
   },
 });
 
-export const { addBasket, removeBasket, incrementBasket, decrementBasket, replaceBasket } =
+export const {addBasket, replaceBasket,removeBasket,incrementBasket,decrementBasket} =
   basketSlice.actions;
 
 export default basketSlice.reducer;
