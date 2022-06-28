@@ -1,25 +1,28 @@
-import React, { useState } from 'react';
-import style from './style.module.scss';
-import Link from 'next/link';
+import React, { useState } from "react";
+import style from "./style.module.scss";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
+
 const Links = () => {
   const [links, setLinks] = useState();
+  const { t } = useTranslation("menu");
 
   return (
     <div className={style.container}>
-      <Link href="/" onClick={() => setLinks('')}>
-        <a>Home</a>
+      <Link href="/" onClick={() => setLinks("")}>
+        <a>{t("home")}</a>
       </Link>
       <Link href="/restaurants">
-        <a>Restaurants</a>
+        <a>{t("restaurants")}</a>
       </Link>
       <Link href="/about">
-        <a>About us</a>
+        <a>{t("about us")}</a>
       </Link>
       <Link href="/how-it-works">
-        <a>How it works</a>
+        <a>{t("how it works")}</a>
       </Link>
       <Link href="/faq">
-        <a>FAQ`s</a>
+        <a>{t("faqs")}</a>
       </Link>
     </div>
   );

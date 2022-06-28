@@ -5,8 +5,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import styles from "./Accardion.module.scss";
+import { useTranslation } from "react-i18next";
 
 export const FaqAccordion = () => {
+  const { t } = useTranslation("common");
+
   return (
     <>
       <Accordion className={styles.accardion}>
@@ -16,7 +19,7 @@ export const FaqAccordion = () => {
           id="panel1a-header"
         >
           <Typography className={styles.accardion__title}>
-            Accordion 1
+            {t("faq1")}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -33,7 +36,7 @@ export const FaqAccordion = () => {
           id="panel2a-header"
         >
           <Typography className={styles.accardion__title}>
-            Accordion 2
+            {t("faq2")}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -50,7 +53,7 @@ export const FaqAccordion = () => {
           id="panel3a-header"
         >
           <Typography className={styles.accardion__title}>
-            Accordion 3
+            {t("faq3")}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -67,7 +70,7 @@ export const FaqAccordion = () => {
           id="panel4a-header"
         >
           <Typography className={styles.accardion__title}>
-            Accordion 4
+            {t("faq4")}
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
