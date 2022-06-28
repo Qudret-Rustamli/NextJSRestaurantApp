@@ -1,8 +1,9 @@
-import Head from 'next/head';
-import React from 'react';
-import SecondLayout from '../../components/Layout/SecondLayout';
-import LoginLayout from '../../components/NestedLayouts/LoginLayouts/LoginLayout';
-import LoginFeature from '../../features/Login';
+import Head from "next/head";
+import React from "react";
+import SecondLayout from "../../components/Layout/SecondLayout";
+import LoginLayout from "../../components/NestedLayouts/LoginLayouts/LoginLayout";
+import LoginFeature from "../../features/Login";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Login = () => {
   return (
@@ -23,5 +24,17 @@ Login.getLayout = () => {
     </SecondLayout>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  let languages = {
+    ...(await serverSideTranslations(locale, ["common", "menu"])),
+  };
+
+  return {
+    props: {
+      ...languages,
+    },
+  };
+}
 
 export default Login;

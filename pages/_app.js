@@ -1,13 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/globals.scss';
-import Layout from '../components/Layout';
-//redux
-import { Provider } from 'react-redux';
-import { store } from '../Redux/store';
-
-//react-tastify
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/globals.scss";
+import Layout from "../components/Layout";
+import { Provider } from "react-redux";
+import { store } from "../Redux/store";
+import { appWithTranslation } from "next-i18next";
+import nextI18NextConfig from "../next-i18next.config";
 
 function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page);
@@ -17,21 +14,11 @@ function MyApp({ Component, pageProps }) {
       {getLayout(
         <Layout>
           <Component {...pageProps} />
-          <ToastContainer
-            position="top-right"
-            autoClose={5000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={true}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-          />
+        
         </Layout>,
       )}
     </Provider>
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp, nextI18NextConfig);

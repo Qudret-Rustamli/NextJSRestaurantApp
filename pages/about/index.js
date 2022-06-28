@@ -1,6 +1,7 @@
-import React from 'react';
-import Head from 'next/head';
-import AboutContent from '../../features/About/AboutContainer';
+import React from "react";
+import Head from "next/head";
+import AboutContent from "../../features/About/AboutContainer";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const AboutUs = () => {
   return (
@@ -13,5 +14,17 @@ const AboutUs = () => {
     </>
   );
 };
+
+export async function getStaticProps({ locale }) {
+  let languages = {
+    ...(await serverSideTranslations(locale, ["common", "menu"])),
+  };
+
+  return {
+    props: {
+      ...languages,
+    },
+  };
+}
 
 export default AboutUs;

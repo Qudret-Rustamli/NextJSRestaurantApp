@@ -1,7 +1,8 @@
-import { Button } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import { Formik, Form } from 'formik';
 import style from './formContainer.module.scss';
-import SendIcon from '@mui/icons-material/Send';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
+import CancelIcon from '@mui/icons-material/Cancel';
 //firebase
 import { db } from '../../firebase/firebase-config';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
@@ -27,8 +28,9 @@ const FormContainer = ({ initialValues, validationSchema, children, collectionNa
   }, []);
   const onSubmit = (values) => {
     //add data to firebase
-    const collectionRef = collection(db, collectionName);
-    addDoc(collectionRef, values);
+    /* const collectionRef = collection(db, collectionName);
+    addDoc(collectionRef, values); */
+    console.log(values, 'formContainer');
   };
   //addDoc(collectionRef, values);
   return (
@@ -36,19 +38,13 @@ const FormContainer = ({ initialValues, validationSchema, children, collectionNa
       {(formik) => (
         <Form className={style.formContainer}>
           {children}
-          <div
-            style={{
-              width: '100%',
-              display: 'flex',
-              justifyContent: 'flex-end',
-            }}>
+          <div className={style.btnContainer}>
             <Button
-              style={{ width: '50%' }}
               type="submit"
               variant="contained"
-              endIcon={<SendIcon />}
+              startIcon={<DoneAllIcon />}
               color="success"
-              className={style.formContainer__btn}
+              className={style.btnContainer__btn}
               disabled={!formik.isValid || formik.isSubmitting}>
               SEND
             </Button>

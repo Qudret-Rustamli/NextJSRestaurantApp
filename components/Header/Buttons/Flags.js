@@ -1,25 +1,28 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import { useState } from 'react';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import { useState } from "react";
+import { useRouter } from "next/router";
+
 export default function Flags() {
   const [flag, setFlag] = useState('en');
   const [anchorEl, setAnchorEl] = useState(false);
   const open = Boolean(anchorEl);
   const router = useRouter();
-  const { t, i18n } = useTranslation();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = (flag) => {
     if (flag === 'az' || flag === 'en' || flag === 'fr') {
       setFlag(flag);
     }
+
     setAnchorEl(null);
+    router.push(router.route, router.asPath, {
+      locale: flag,
+    });
   };
 
   return (

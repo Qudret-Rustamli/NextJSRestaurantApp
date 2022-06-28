@@ -1,9 +1,10 @@
-import Button from '../../../components/Button';
-import BigCard from '../HomePageContents/Card/BigCard';
-import BigPanel from '../HomePageContents/Panel/BigPanel';
-import SmallPanel from '../HomePageContents/Panel/SmallPanel';
-import style from '../../../styles/pages/home.module.scss';
-import { MdOutgoingMail, MdLocationPin } from 'react-icons/md';
+import Button from "../../../components/Button";
+import BigCard from "../HomePageContents/Card/BigCard";
+import BigPanel from "../HomePageContents/Panel/BigPanel";
+import SmallPanel from "../HomePageContents/Panel/SmallPanel";
+import style from "../../../styles/pages/home.module.scss";
+import { MdOutgoingMail, MdLocationPin } from "react-icons/md";
+import { useTranslation } from "next-i18next";
 //icons
 import {
   FaFacebook,
@@ -15,17 +16,17 @@ import {
 } from 'react-icons/fa';
 
 export const HomeFeature = () => {
+  const { t } = useTranslation("common");
   return (
     <div className={style.container}>
       {/* ====================================================================== */}
       <div className={style.container__mainContent}>
         <div className={style.container__mainContent__subLeft}>
           <div className={style.container__mainContent__subLeft__title}>
-            Our Food Site Makes It Easy To Find Local Food
+            {t("header title")}
           </div>
           <div className={style.container__mainContent__subLeft__content}>
-            Lorem Ipsum Is Placeholder Text Commonly Used In The Graphic, Print, And Publishing
-            Industries For Previewing Layouts And Visual Mockups.
+            {t("header desc")}
           </div>
           <div className={style.container__mainContent__subLeft__btns}>
             <Button
@@ -33,16 +34,18 @@ export const HomeFeature = () => {
               height="4.3rem"
               borderRadius="2rem"
               color="white"
-              backgroud="#d63626">
-              Sign Up
+              backgroud="#d63626"
+            >
+              {t("sign_up")}
             </Button>
             <Button
               width="35%"
               height="4.3rem"
               borderRadius="2rem"
               color="black"
-              border="1px solid black">
-              Order Now
+              border="1px solid black"
+            >
+              {t("order_now")}
             </Button>
           </div>
         </div>
@@ -53,10 +56,11 @@ export const HomeFeature = () => {
       </div>
       {/* ====================================================================== */}
       <div className={style.container__featureContent}>
-        <div className={style.container__featureContent__title}>Features</div>
+        <div className={style.container__featureContent__title}>
+          {t("features")}
+        </div>
         <div className={style.container__featureContent__content}>
-          Lorem ipsum is placeholder text commonly used in the graphic, print,
-          and publishing industries for previewing layouts and visual mockups.
+          {t("features desc")}
         </div>
         <div className={style.container__featureContent__cards}>
           <BigCard />
