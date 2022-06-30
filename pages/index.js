@@ -1,15 +1,10 @@
 import HomeFeature from "../features/Home/HomeContainer";
 import axios from "axios";
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 const Home = ({ datas }) => {
-  const router = useRouter();
-
-  const { t } = useTranslation("common");
-
-
+  // console.log(datas["-N5pbMXnz6Iy-hbI8aKA"].restaurants);
 
   return (
     <div>
@@ -21,7 +16,7 @@ const Home = ({ datas }) => {
 export async function getServerSideProps({ locale }) {
   // const { locale } = context;
   const datas = await axios.get(
-    "https://foody-delivery-admin-default-rtdb.firebaseio.com/res.json/"
+    "https://foody-delivery-admin-default-rtdb.firebaseio.com/restaurants.json"
   );
 
   let languages = {
